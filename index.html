@@ -4,21 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI және Мағжан мұрасы</title>
-  <meta name="description" content="Мағжан Жұмабаевтың өмірі, шығармашылығы және жасанды интеллект әлеміндегі мұрасы туралы танымдық сайт." />
+  <meta name="description" content="Мағжан Жұмабаев мұрасы, өлеңдері, өмірі және ЖИ әлеміндегі жаңа көзқарас." />
 
   <style>
     :root {
-      --bg: #f7efe3;
-      --paper: #fffaf2;
-      --text: #24180f;
-      --muted: #6f5a44;
-      --accent: #9b5c21;
-      --accent-2: #c9954b;
-      --dark: #1f1711;
-      --gold: #e3b15e;
-      --green: #2f5f4f;
-      --shadow: 0 18px 45px rgba(67, 42, 18, 0.16);
-      --radius: 22px;
+      --bg: #f4ead8;
+      --paper: #fff8eb;
+      --paper-2: #f8ead0;
+      --text: #24150b;
+      --muted: #705940;
+      --accent: #9b551c;
+      --accent2: #c88a36;
+      --green: #254f43;
+      --dark: #19100a;
+      --gold: #e1b566;
+      --line: rgba(139, 82, 29, .18);
+      --shadow: 0 24px 70px rgba(56, 31, 10, .17);
+      --radius: 26px;
     }
 
     * {
@@ -34,10 +36,24 @@
       font-family: Georgia, "Times New Roman", serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(227,177,94,0.25), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(47,95,79,0.15), transparent 30%),
-        linear-gradient(180deg, #fff7e9 0%, var(--bg) 45%, #efe1cd 100%);
-      line-height: 1.65;
+        radial-gradient(circle at 10% 0%, rgba(225,181,102,.35), transparent 30%),
+        radial-gradient(circle at 85% 12%, rgba(37,79,67,.18), transparent 25%),
+        linear-gradient(180deg, #fff5e5 0%, var(--bg) 50%, #ead8bd 100%);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image:
+        linear-gradient(45deg, transparent 45%, rgba(126,73,24,.22) 46%, transparent 48%),
+        linear-gradient(-45deg, transparent 45%, rgba(126,73,24,.18) 46%, transparent 48%);
+      background-size: 42px 42px;
+      z-index: -1;
     }
 
     a {
@@ -45,68 +61,82 @@
     }
 
     .container {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
+    }
+
+    .ornament {
+      height: 18px;
+      width: min(620px, 90%);
+      margin: 28px auto 0;
+      opacity: .55;
+      background:
+        radial-gradient(circle, var(--accent2) 2px, transparent 3px) 0 0 / 24px 18px,
+        linear-gradient(90deg, transparent, var(--accent2), transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 250, 242, 0.86);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(155, 92, 33, 0.14);
+      z-index: 50;
+      background: rgba(255, 248, 235, .84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
+      min-height: 74px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      min-height: 72px;
-      gap: 18px;
+      align-items: center;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
       text-decoration: none;
+      font-weight: 900;
+      letter-spacing: .2px;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background:
-        linear-gradient(135deg, var(--accent), var(--gold));
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
       color: #fff;
-      box-shadow: 0 10px 25px rgba(155, 92, 33, 0.28);
+      background:
+        linear-gradient(135deg, var(--accent), var(--gold));
+      box-shadow: 0 12px 28px rgba(155,85,28,.28);
+      transform: rotate(-6deg);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
     .nav-links a {
       text-decoration: none;
-      padding: 9px 12px;
-      border-radius: 999px;
       color: var(--muted);
+      padding: 9px 13px;
+      border-radius: 999px;
       font-size: 15px;
-      transition: 0.25s ease;
+      transition: .25s;
+      border: 1px solid transparent;
     }
 
     .nav-links a:hover {
-      background: rgba(155, 92, 33, 0.10);
       color: var(--accent);
+      border-color: rgba(155,85,28,.22);
+      background: rgba(255,255,255,.52);
+      transform: translateY(-2px);
     }
 
     .menu-btn {
@@ -115,163 +145,186 @@
       background: var(--accent);
       color: #fff;
       border-radius: 14px;
-      padding: 10px 13px;
+      padding: 10px 14px;
       cursor: pointer;
       font-size: 18px;
     }
 
     .hero {
-      padding: 78px 0 55px;
+      padding: 82px 0 54px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "Қалам • Рух • Өлең";
+      position: absolute;
+      right: -70px;
+      top: 180px;
+      transform: rotate(90deg);
+      color: rgba(155,85,28,.18);
+      font-size: 54px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 42px;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 44px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-flex;
+      gap: 10px;
       align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border: 1px solid rgba(155, 92, 33, 0.2);
-      background: rgba(255, 250, 242, 0.65);
+      padding: 8px 15px;
       border-radius: 999px;
       color: var(--accent);
-      font-size: 15px;
+      background: rgba(255,248,235,.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(56,31,10,.06);
       margin-bottom: 18px;
     }
 
     h1, h2, h3 {
-      line-height: 1.15;
       margin: 0;
+      line-height: 1.12;
     }
 
     h1 {
-      font-size: clamp(44px, 7vw, 86px);
-      letter-spacing: -2px;
+      font-size: clamp(42px, 7vw, 90px);
+      letter-spacing: -2.5px;
       color: var(--dark);
     }
 
-    .hero p {
+    .hero-text {
+      max-width: 760px;
       font-size: clamp(18px, 2vw, 22px);
       color: var(--muted);
       margin: 22px 0 28px;
-      max-width: 760px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      border: 0;
+      gap: 9px;
+      padding: 13px 20px;
       border-radius: 999px;
-      padding: 13px 19px;
+      border: 0;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 16px;
       text-decoration: none;
       cursor: pointer;
-      transition: 0.25s ease;
-      font-weight: 700;
-      font-family: inherit;
-      font-size: 16px;
+      transition: .25s;
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), #74370e);
       color: #fff;
-      box-shadow: 0 14px 25px rgba(155, 92, 33, 0.28);
+      box-shadow: 0 16px 30px rgba(155,85,28,.28);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #7c4618;
+      transform: translateY(-3px);
+      box-shadow: 0 20px 42px rgba(155,85,28,.34);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.65);
       color: var(--accent);
-      border: 1px solid rgba(155, 92, 33, 0.22);
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(155,85,28,.25);
     }
 
     .btn-secondary:hover {
-      background: rgba(155, 92, 33, 0.10);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      background: rgba(225,181,102,.19);
+    }
+
+    .portrait-wrap {
+      position: relative;
+    }
+
+    .portrait-wrap::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -24px;
+      top: -24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(225,181,102,.8), transparent 65%);
+      filter: blur(6px);
+      z-index: -1;
     }
 
     .portrait-card {
       position: relative;
-      background: linear-gradient(145deg, #fff8ed, #ead3b5);
-      border-radius: 36px;
-      padding: 22px;
+      padding: 18px;
+      border-radius: 38px;
+      background:
+        linear-gradient(145deg, rgba(255,248,235,.96), rgba(234,205,161,.92));
+      border: 1px solid rgba(155,85,28,.2);
       box-shadow: var(--shadow);
       overflow: hidden;
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
-    .portrait-card::before {
+    .portrait-card::after {
       content: "";
       position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(155, 92, 33, 0.25);
-      border-radius: 28px;
+      inset: 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(155,85,28,.24);
       pointer-events: none;
     }
 
-    .portrait {
-      position: relative;
-      height: 390px;
-      border-radius: 28px;
-      overflow: hidden;
+    .portrait-main {
+      height: 430px;
+      border-radius: 30px;
       background:
-        linear-gradient(rgba(31,23,17,0.15), rgba(31,23,17,0.45)),
+        linear-gradient(180deg, rgba(25,16,10,.04), rgba(25,16,10,.42)),
         url("https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg");
       background-size: cover;
       background-position: center;
-      filter: sepia(0.28);
+      filter: sepia(.25) contrast(1.03);
     }
 
-    .portrait-fallback {
-      display: none;
-    }
-
-    .quote {
+    .portrait-caption {
       position: relative;
-      padding: 20px 14px 4px;
+      padding: 18px 12px 4px;
       font-size: 20px;
       color: var(--dark);
     }
 
-    .quote span {
+    .portrait-caption span {
       display: block;
       color: var(--accent);
       font-size: 15px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
-    .stats {
+    .mini-stats {
+      margin-top: 30px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      margin-top: 34px;
     }
 
     .stat {
-      background: rgba(255, 250, 242, 0.75);
-      border: 1px solid rgba(155, 92, 33, 0.14);
-      border-radius: 20px;
       padding: 18px;
-      box-shadow: 0 10px 24px rgba(67, 42, 18, 0.07);
+      border-radius: 22px;
+      background: rgba(255,248,235,.72);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 34px rgba(56,31,10,.07);
     }
 
     .stat strong {
@@ -286,67 +339,106 @@
     }
 
     section {
-      padding: 58px 0;
+      padding: 62px 0;
+      position: relative;
     }
 
     .section-title {
       display: flex;
-      align-items: end;
       justify-content: space-between;
+      align-items: flex-end;
       gap: 24px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .section-title h2 {
-      font-size: clamp(32px, 4vw, 54px);
+      font-size: clamp(32px, 4vw, 56px);
       color: var(--dark);
     }
 
     .section-title p {
-      max-width: 620px;
+      max-width: 650px;
       color: var(--muted);
       margin: 0;
     }
 
     .card {
-      background: rgba(255, 250, 242, 0.86);
-      border: 1px solid rgba(155, 92, 33, 0.13);
+      background:
+        linear-gradient(180deg, rgba(255,248,235,.93), rgba(255,248,235,.78));
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
-      box-shadow: 0 14px 35px rgba(67, 42, 18, 0.09);
+      box-shadow: 0 16px 42px rgba(56,31,10,.09);
     }
 
-    .intro-grid {
+    .bio-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 20px;
       align-items: start;
     }
 
     .timeline {
-      position: relative;
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 105px 1fr;
+      grid-template-columns: 112px 1fr;
       gap: 14px;
       padding: 16px;
-      background: rgba(255,255,255,0.45);
       border-radius: 18px;
-      border: 1px solid rgba(155, 92, 33, 0.10);
+      background: rgba(255,255,255,.47);
+      border: 1px solid rgba(155,85,28,.12);
     }
 
     .year {
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .bio-text p {
-      margin-top: 0;
-      color: #3c2c1f;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(155,85,28,.18);
+      background: #dcc09a;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      filter: sepia(.25) contrast(1.05);
+      transition: .35s;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.05);
+      filter: sepia(.05) contrast(1.08);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 14px;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(25,16,10,.25), rgba(25,16,10,.86));
+      backdrop-filter: blur(8px);
     }
 
     .feature-grid {
@@ -356,15 +448,42 @@
     }
 
     .feature {
-      min-height: 210px;
       position: relative;
       overflow: hidden;
+      min-height: 210px;
+      transition: .25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature::after {
+      content: "";
+      position: absolute;
+      right: -44px;
+      bottom: -44px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(225,181,102,.22);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--accent);
+      background: rgba(155,85,28,.12);
+      font-size: 26px;
+      margin-bottom: 14px;
     }
 
     .feature h3 {
       font-size: 24px;
-      margin-bottom: 12px;
-      color: var(--dark);
+      margin-bottom: 10px;
     }
 
     .feature p {
@@ -372,32 +491,28 @@
       margin: 0;
     }
 
-    .feature .icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: rgba(155, 92, 33, 0.12);
-      color: var(--accent);
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
     .poem-tools {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 12px;
       margin-bottom: 18px;
+      position: sticky;
+      top: 86px;
+      z-index: 10;
+      padding: 10px;
+      border-radius: 22px;
+      background: rgba(255,248,235,.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(155,85,28,.12);
     }
 
     .search {
       flex: 1;
       min-width: 230px;
-      padding: 13px 16px;
+      padding: 13px 17px;
       border-radius: 999px;
-      border: 1px solid rgba(155, 92, 33, 0.22);
-      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(155,85,28,.25);
+      background: rgba(255,255,255,.7);
       font-family: inherit;
       font-size: 16px;
       outline: none;
@@ -405,24 +520,27 @@
 
     .poems {
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     details {
-      background: rgba(255, 250, 242, 0.88);
-      border: 1px solid rgba(155, 92, 33, 0.16);
-      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(67, 42, 18, 0.07);
+      border-radius: 24px;
+      border: 1px solid rgba(155,85,28,.18);
+      background:
+        linear-gradient(180deg, rgba(255,248,235,.96), rgba(250,235,208,.84));
+      box-shadow: 0 14px 36px rgba(56,31,10,.08);
     }
 
     summary {
       cursor: pointer;
-      padding: 18px 20px;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--dark);
+      padding: 19px 22px;
       list-style: none;
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--dark);
+      background:
+        linear-gradient(90deg, rgba(225,181,102,.18), transparent);
     }
 
     summary::-webkit-details-marker {
@@ -430,11 +548,9 @@
     }
 
     summary::after {
-      content: "+";
+      content: "＋";
       float: right;
       color: var(--accent);
-      font-size: 24px;
-      line-height: 1;
     }
 
     details[open] summary::after {
@@ -442,103 +558,165 @@
     }
 
     .poem-content {
-      padding: 0 20px 22px;
-      color: #352719;
+      padding: 0 24px 26px;
       white-space: pre-line;
       font-size: 18px;
+      color: #342316;
+      border-top: 1px dashed rgba(155,85,28,.22);
+      max-height: 650px;
+      overflow: auto;
     }
 
-    .media-grid {
+    .poem-content::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .poem-content::-webkit-scrollbar-thumb {
+      background: rgba(155,85,28,.35);
+      border-radius: 999px;
+    }
+
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .video {
+    .video-card {
       position: relative;
       overflow: hidden;
-      border-radius: 20px;
-      aspect-ratio: 16 / 9;
-      background: #000;
+      border-radius: 26px;
+      background: #160e08;
+      min-height: 245px;
       box-shadow: var(--shadow);
+      border: 1px solid rgba(155,85,28,.2);
+      cursor: pointer;
+      transition: .28s;
     }
 
-    .video iframe {
-      position: absolute;
-      inset: 0;
+    .video-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .video-card img {
       width: 100%;
-      height: 100%;
-      border: 0;
+      height: 245px;
+      object-fit: cover;
+      display: block;
+      opacity: .86;
+      transition: .28s;
     }
 
-    .link-grid {
+    .video-card:hover img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 68px;
+      height: 68px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: rgba(155,85,28,.92);
+      box-shadow: 0 18px 36px rgba(0,0,0,.32);
+      font-size: 28px;
+    }
+
+    .video-info {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(25,16,10,.16), rgba(25,16,10,.88));
+      backdrop-filter: blur(8px);
+    }
+
+    .video-info strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .video-info span {
+      display: block;
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+    }
+
+    .resource-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
 
-    .resource-link {
+    .resource {
       display: block;
       text-decoration: none;
       padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.55);
-      border: 1px solid rgba(155, 92, 33, 0.14);
-      transition: 0.25s ease;
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(155,85,28,.16);
+      transition: .25s;
     }
 
-    .resource-link:hover {
-      transform: translateY(-3px);
-      background: rgba(227, 177, 94, 0.18);
+    .resource:hover {
+      background: rgba(225,181,102,.2);
+      transform: translateY(-4px);
     }
 
-    .resource-link strong {
+    .resource strong {
       display: block;
-      color: var(--dark);
       font-size: 18px;
-      margin-bottom: 6px;
+      color: var(--dark);
     }
 
-    .resource-link span {
+    .resource span {
       color: var(--muted);
       font-size: 15px;
     }
 
     .chat-wrap {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: .82fr 1.18fr;
       gap: 18px;
     }
 
     .quick-questions {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 10px;
     }
 
     .quick-questions button {
       text-align: left;
-      border: 1px solid rgba(155, 92, 33, 0.17);
-      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(155,85,28,.18);
+      background: rgba(255,255,255,.55);
       border-radius: 16px;
-      padding: 13px 14px;
+      padding: 13px 15px;
       font-family: inherit;
       cursor: pointer;
-      color: var(--dark);
       font-size: 16px;
-      transition: 0.2s ease;
+      transition: .22s;
     }
 
     .quick-questions button:hover {
-      background: rgba(155, 92, 33, 0.10);
+      background: rgba(225,181,102,.2);
+      transform: translateX(4px);
     }
 
     .chatbox {
       height: 430px;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
       padding: 0;
+      overflow: hidden;
     }
 
     .messages {
@@ -554,66 +732,126 @@
       max-width: 82%;
       padding: 12px 14px;
       border-radius: 18px;
-      font-size: 16px;
     }
 
     .bot {
       align-self: flex-start;
-      background: rgba(47, 95, 79, 0.10);
-      border: 1px solid rgba(47, 95, 79, 0.18);
+      background: rgba(37,79,67,.11);
+      border: 1px solid rgba(37,79,67,.18);
     }
 
     .user {
       align-self: flex-end;
-      background: rgba(155, 92, 33, 0.13);
-      border: 1px solid rgba(155, 92, 33, 0.18);
+      background: rgba(155,85,28,.13);
+      border: 1px solid rgba(155,85,28,.18);
     }
 
     .chat-form {
       display: flex;
       gap: 8px;
       padding: 14px;
-      border-top: 1px solid rgba(155, 92, 33, 0.14);
-      background: rgba(255,255,255,0.45);
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.42);
     }
 
     .chat-form input {
       flex: 1;
-      border-radius: 999px;
-      border: 1px solid rgba(155, 92, 33, 0.22);
       padding: 12px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(155,85,28,.22);
       font-family: inherit;
       font-size: 16px;
       outline: none;
     }
 
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      background: rgba(20,12,7,.76);
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: grid;
+    }
+
+    .modal-inner {
+      width: min(960px, 100%);
+      background: var(--paper);
+      border-radius: 26px;
+      padding: 14px;
+      box-shadow: 0 26px 90px rgba(0,0,0,.42);
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 4px 12px;
+    }
+
+    .modal-title {
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .close {
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .frame {
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     footer {
+      margin-top: 40px;
       padding: 34px 0;
-      background: var(--dark);
-      color: rgba(255,255,255,0.78);
-      margin-top: 45px;
+      color: rgba(255,255,255,.78);
+      background:
+        linear-gradient(135deg, #19100a, #2b1a0e);
     }
 
     footer .container {
       display: flex;
-      justify-content: space-between;
-      gap: 16px;
       flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
     }
 
     .to-top {
       position: fixed;
       right: 18px;
       bottom: 18px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      z-index: 45;
+      width: 50px;
+      height: 50px;
+      display: none;
       border: 0;
-      background: var(--accent);
+      border-radius: 50%;
       color: #fff;
+      background: var(--accent);
       box-shadow: var(--shadow);
       cursor: pointer;
-      display: none;
       font-size: 20px;
     }
 
@@ -621,25 +859,28 @@
       display: block;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 960px) {
       .hero-grid,
-      .intro-grid,
+      .bio-grid,
       .chat-wrap {
         grid-template-columns: 1fr;
       }
 
+      .mini-stats,
       .feature-grid,
-      .link-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stats {
+      .gallery-grid,
+      .video-grid,
+      .resource-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .section-title {
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
+      }
+
+      .hero::after {
+        display: none;
       }
     }
 
@@ -652,36 +893,30 @@
         position: absolute;
         left: 16px;
         right: 16px;
-        top: 76px;
+        top: 78px;
         display: none;
         flex-direction: column;
         align-items: stretch;
-        background: rgba(255, 250, 242, 0.98);
-        border: 1px solid rgba(155, 92, 33, 0.16);
-        border-radius: 20px;
         padding: 10px;
+        border-radius: 22px;
+        background: rgba(255,248,235,.98);
         box-shadow: var(--shadow);
+        border: 1px solid var(--line);
       }
 
       .nav-links.open {
         display: flex;
       }
 
-      .nav-links a {
-        padding: 12px 14px;
+      .portrait-main {
+        height: 350px;
       }
 
-      .portrait-card {
-        min-height: auto;
-      }
-
-      .portrait {
-        height: 320px;
-      }
-
+      .mini-stats,
       .feature-grid,
-      .media-grid,
-      .link-grid {
+      .gallery-grid,
+      .video-grid,
+      .resource-grid {
         grid-template-columns: 1fr;
       }
 
@@ -692,6 +927,14 @@
       h1 {
         letter-spacing: -1px;
       }
+
+      .poem-tools {
+        position: static;
+      }
+
+      .poem-content {
+        max-height: 560px;
+      }
     }
   </style>
 </head>
@@ -699,16 +942,18 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Басты бет">
+      <a class="brand" href="#top">
         <span class="brand-mark">М</span>
         <span>AI және Мағжан мұрасы</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Мәзір">☰</button>
+      <button class="menu-btn" id="menuBtn">☰</button>
 
       <nav class="nav-links" id="navLinks">
         <a href="#omiri">Өмірі</a>
+        <a href="#galereya">Галерея</a>
         <a href="#murasy">Мұрасы</a>
+        <a href="#olenderi">Өлеңдері</a>
         <a href="#ai">ЖИ әлемі</a>
         <a href="#kitaphana">Сандық кітапхана</a>
         <a href="#kino">Кино-live</a>
@@ -721,48 +966,50 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">✦ Ұлттық рух пен жаңа технология тоғысы</div>
+          <div class="eyebrow">✦ Ұлттық рух пен жасанды интеллект тоғысы</div>
           <h1>Мағжан мұрасы — ұлттық рухтың мәңгілік үні</h1>
-          <p>
-            Бұл сайт Мағжан Жұмабаевтың өмірі, шығармашылығы, поэзиясы және
-            жасанды интеллект арқылы жаңаша танылуы туралы таныстырылымдық кеңістік.
+          <p class="hero-text">
+            Жасанды интеллект арқылы ақын әлеміне жаңа көзқарас. Бұл сайтта Мағжан Жұмабаевтың өмірі,
+            мұрасы, өлеңдері, деректі бейнелері және цифрлық форматтағы танымдық материалдары жинақталды.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#murasy">Шығармаларды оқу</a>
-            <a class="btn btn-secondary" href="https://youtube.com/watch?v=q67XqLfb1ok&feature=shared" target="_blank" rel="noopener">
-              Бейнематериал көру
-            </a>
+            <a class="btn btn-primary" href="#olenderi">📖 Өлеңдерді оқу</a>
+            <a class="btn btn-secondary" href="#ai">🤖 ЖИ әлеміндегі Мағжан</a>
+            <a class="btn btn-secondary" href="#kino">▶ Кино-live</a>
           </div>
 
-          <div class="stats">
+          <div class="mini-stats">
             <div class="stat">
               <strong>1893</strong>
-              <span>Ақын дүниеге келді</span>
+              <span>Дүниеге келді</span>
             </div>
             <div class="stat">
               <strong>1912</strong>
-              <span>«Шолпан» жинағы шықты</span>
+              <span>«Шолпан» жинағы</span>
             </div>
             <div class="stat">
               <strong>1938</strong>
-              <span>Қуғын-сүргін құрбаны болды</span>
+              <span>Қуғын-сүргін құрбаны</span>
             </div>
             <div class="stat">
               <strong>1989</strong>
-              <span>Мұрасы қайта оралды</span>
+              <span>Мұрасы оралды</span>
             </div>
           </div>
         </div>
 
-        <aside class="portrait-card">
-          <div class="portrait" role="img" aria-label="Мағжан Жұмабаев суреті"></div>
-          <div class="quote">
-            «Мен жастарға сенемін!»
-            <span>Мағжан Жұмабаев</span>
-          </div>
-        </aside>
+        <div class="portrait-wrap">
+          <aside class="portrait-card">
+            <div class="portrait-main" role="img" aria-label="Мағжан Жұмабаев портреті"></div>
+            <div class="portrait-caption">
+              «Арыстандай айбатты, жолбарыстай қайратты...»
+              <span>Мағжан Жұмабаев</span>
+            </div>
+          </aside>
+        </div>
       </div>
+      <div class="ornament"></div>
     </section>
 
     <section id="omiri">
@@ -770,40 +1017,40 @@
         <div class="section-title">
           <h2>Мағжан Жұмабаев өмірі</h2>
           <p>
-            Алаш қозғалысының қайраткері, ұлт ақыны, ағартушы әрі қазақ әдебиетінің
-            жарық жұлдызы.
+            Мағжан — Алаш қозғалысының қайраткері, ұлт ақыны, педагог, аудармашы және қазақ әдебиетінің
+            жарқын жұлдызы.
           </p>
         </div>
 
-        <div class="intro-grid">
+        <div class="bio-grid">
           <div class="card timeline">
             <div class="timeline-item">
               <div class="year">1893</div>
-              <div>Солтүстік Қазақстан өңірінде, Сасықкөл маңында дүниеге келді.</div>
+              <div>Солтүстік Қазақстан өңірінде, Сасықкөл жағасында дүниеге келді.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1905–1910</div>
-              <div>Қызылжардағы медреседе білім алып, Шығыс әдебиетімен танысты.</div>
+              <div>Қызылжардағы медреседе оқып, Шығыс әдебиетімен танысты.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1910–1913</div>
-              <div>Уфа қаласындағы «Ғалия» медресесінде оқыды.</div>
+              <div>Уфа қаласындағы «Ғалия» медресесінде білім алды.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1912</div>
-              <div>Қазанда «Шолпан» атты тұңғыш өлеңдер жинағы жарық көрді.</div>
+              <div>Қазанда «Шолпан» атты алғашқы өлеңдер жинағы жарық көрді.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1917</div>
-              <div>Қоғамдық-саяси өмірге белсене араласып, Алаш ісіне қызмет етті.</div>
+              <div>Алаш қозғалысы мен қоғамдық-саяси істерге белсене араласты.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1923–1927</div>
-              <div>Мәскеудегі Жоғары әдебиет-көркемөнер институтында білім алды.</div>
+              <div>Мәскеудегі Жоғары әдебиет-көркемөнер институтында оқыды.</div>
             </div>
             <div class="timeline-item">
-              <div class="year">1929–1936</div>
-              <div>«Алқа» ұйымы бойынша айыпталып, түрме мен айдауға ұшырады.</div>
+              <div class="year">1929</div>
+              <div>«Алқа» ұйымы бойынша айыпталып, Бутырка түрмесіне қамалды.</div>
             </div>
             <div class="timeline-item">
               <div class="year">1938</div>
@@ -811,23 +1058,56 @@
             </div>
           </div>
 
-          <div class="card bio-text">
+          <div class="card">
             <h3>Қысқаша өмірбаян</h3>
             <p>
-              Мағжан Бекенұлы Жұмабаев — қазақ әдебиетіндегі сыршылдық пен
-              романтикалық қуатты жаңа биікке көтерген ақын. Ол бала күнінен білімге
-              құштар болып, Қызылжар, Уфа, Омбы, Мәскеу қалаларында білім алды.
+              Мағжан Бекенұлы Жұмабаев қазақ поэзиясына жаңа көркемдік өріс әкелді. Ол Абай дәстүрін
+              жалғастырып, Шығыс пен Батыс әдебиетін терең меңгерді. Оның шығармаларында туған жерге
+              сүйіспеншілік, ұлт азаттығы, түркі бірлігі, махаббат, адам жаны мен рухани еркіндік тақырыптары
+              ерекше орын алады.
             </p>
             <p>
-              Ақын Абай дәстүрін жалғастырып, Шығыс пен Батыс мәдениетін терең
-              таныды. Оның поэзиясында туған жер, түркі бірлігі, азаттық, махаббат,
-              адам жаны, өнер-білім және ұлттық рух тақырыптары кең орын алды.
+              Ақын ағартушылық бағытта да көп еңбек етті. «Педагогика», «Бастауыш мектепте ана тілін оқыту
+              жөні» сияқты еңбектері қазақ білім беру тарихында маңызды орын алады. Кеңестік қуғын-сүргін
+              жылдары жазықсыз жапа шегіп, кейін толық ақталды.
             </p>
-            <p>
-              Мағжан Жұмабаев ағартушылық салада да еңбек етіп, «Педагогика»,
-              «Бастауыш мектепте ана тілін оқыту жөні» секілді еңбектер жазды.
-              Кеңестік қуғын-сүргін жылдарында жазықсыз жапа шегіп, кейін ақталды.
-            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galereya">
+      <div class="container">
+        <div class="section-title">
+          <h2>Мағжан фотогалереясы</h2>
+          <p>
+            Бұл бөлімде ақынның портреті, естелік белгілері және мұрасын танытатын тарихи көріністер берілді.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="photo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg" alt="Мағжан Жұмабаев портреті">
+            <div class="photo-label">
+              <strong>Мағжан Жұмабаев</strong><br>
+              Қазақ әдебиетінің жарық жұлдызы
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Magzhan_Zhumabayev.jpg/800px-Magzhan_Zhumabayev.jpg" alt="Мағжан Жұмабаев тарихи суреті">
+            <div class="photo-label">
+              <strong>Ақын бейнесі</strong><br>
+              Ұлттық рухтың символы
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Stamp_of_Kazakhstan_1993_031.jpg/800px-Stamp_of_Kazakhstan_1993_031.jpg" alt="Мағжан Жұмабаев пошта маркасы">
+            <div class="photo-label">
+              <strong>Пошта маркасы</strong><br>
+              Мағжан құрметіне шығарылған белгі
+            </div>
           </div>
         </div>
       </div>
@@ -838,41 +1118,59 @@
         <div class="section-title">
           <h2>Мағжан мұрасы</h2>
           <p>
-            Ақын поэзиясы — ұлттық рух, терең сезім, асқақ ой және көркем тілдің
-            айрықша үлгісі.
+            Мағжан поэзиясы — ұлттық сана, терең сезім, романтикалық қуат және асқақ рухтың көркем әлемі.
           </p>
         </div>
 
         <div class="feature-grid">
           <article class="card feature">
-            <div class="icon">☀</div>
+            <div class="icon">🔥</div>
             <h3>Ұлттық рух</h3>
-            <p>
-              Мағжан шығармаларында елдік, еркіндік, туған жерге сүйіспеншілік
-              ерекше шабытпен жырланады.
-            </p>
+            <p>Ақын елдік, еркіндік, азаттық идеясын поэзиясының өзегіне айналдырды.</p>
           </article>
 
           <article class="card feature">
-            <div class="icon">✒</div>
+            <div class="icon">🌙</div>
             <h3>Сыршыл лирика</h3>
-            <p>
-              Ақын адамның нәзік сезімін, махаббат пен сағынышты терең поэтикалық
-              үнмен жеткізді.
-            </p>
+            <p>Мағжан адамның ішкі сезімін, махаббат пен сағынышты ерекше нәзіктікпен жеткізді.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">📜</div>
+            <h3>Түркілік сарын</h3>
+            <p>«Түркістан» секілді шығармаларында түркі дүниесінің тарихи рухын асқақ жырлады.</p>
           </article>
 
           <article class="card feature">
             <div class="icon">📚</div>
             <h3>Ағартушылық</h3>
-            <p>
-              Ол білім мен тәрбие мәселесіне ерекше мән беріп, педагогикалық
-              еңбектер қалдырды.
-            </p>
+            <p>Педагогикалық еңбектері арқылы ұлт тәрбиесі мен ана тілінің маңызын көтерді.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">🕊</div>
+            <h3>Алаш идеясы</h3>
+            <p>Мағжан шығармашылығы Алаш мұратымен, ұлт болашағына сеніммен тығыз байланысты.</p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">🤖</div>
+            <h3>ЖИ арқылы тану</h3>
+            <p>Бүгінгі технология ақын мұрасын жаңа форматта ұсынуға жол ашады.</p>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div style="height: 28px;"></div>
+    <section id="olenderi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Өлеңдері</h2>
+          <p>
+            Мұнда ақынның бірнеше өлеңі кең көлемде берілді. Әр өлеңді ашып оқуға, іздеуге және барлығын бірден
+            ашуға болады.
+          </p>
+        </div>
 
         <div class="poem-tools">
           <input class="search" id="poemSearch" type="search" placeholder="Өлең атауын іздеу..." />
@@ -883,46 +1181,129 @@
         <div class="poems" id="poems">
           <details data-title="қазақ тілі">
             <summary>Қазақ тілі</summary>
-            <div class="poem-content">Күш кеміді, айбынды ту құлады,
-Кеше батыр – бүгін қорқақ, бұғады.
-Ерікке ұмтылған ұшқыр жаны кісенде,
+            <div class="poem-content">Күш кемiдi, айбынды ту құлады,
+Кеше батыр – бүгiн қорқақ, бұғады.
+Ерiкке ұмтылған ұшқыр жаны кiсенде
 Қан суынған, жүрек солғын соғады.
 
 Қыран құсты қос қанаты қырқылды,
-Күндей күшті күркіреген ел тынды.
+Күндей күштi күркiреген ел тынды.
 Асқар Алтай — алтын ана есте жоқ,
 Батыр, хандар — асқан жандар ұмытылды!
 
-Ерлік, елдік, бірлік, қайрат, бақ, ардың, —
-Жауыз тағдыр жойды бәрін не бардың...
-Алтын Күннен бағасыз бір белгі боп,
-Нұрлы жұлдыз, бабам тілі, сен қалдың!</div>
+Ерлiк, елдiк, бiрлiк, қайрат, бақ, ардың, —
+Жауыз тағдыр жойды бәрiн не бардың...
+Алтын Күннен бағасыз бiр белгi боп,
+Нұрлы жұлдыз, бабам тiлi, сен қалдың!
+
+Жарық көрмей жатсаң да ұзақ, кен-тiлiм,
+Таза, терең, өткiр, күштi, кең тiлiм,
+Тарап кеткен балаларыңды бауырыңа
+Ақ қолыңмен тарта аларсың сен, тiлiм!</div>
           </details>
 
-          <details data-title="мен жастарға сенемін">
-            <summary>Мен жастарға сенемін</summary>
-            <div class="poem-content">Арыстандай айбатты,
-Жолбарыстай қайратты –
-Қырандай күшті қанатты.
-Мен жастарға сенемін!
+          <details data-title="әже">
+            <summary>Әже</summary>
+            <div class="poem-content">Сығырайған көзі көрінбей
+Томар-томар былшықтан,
+Отырса, бойы аспайды
+Қолындағы ұршықтан.
 
-Көздерінде от ойнар,
-Сөздерінде жалын бар,
-Жаннан қымбат оларға ар,
-Мен жастарға сенемін!</div>
+Алдындағы көженің
+Көрінбес беті қылшықтан.
+Көжесін татпай әженің,
+Жан болмайды құр шыққан.
+
+Көжесін қойшы, кеңесін
+Тыңдамай үйден кім шыққан?!
+Сендер де тыңда, тентектер,
+Тыйылып біраз шолжақтан.
+
+Ертегі айтса, ұршығын
+Ұмытып әжең кетеді.
+Жерде жатқан жүнді алып,
+Қайта-қайта түтеді.
+
+Су сепкендей сап болып,
+Тоқтайды сонда жөтелі.
+Былшықтан көзі жылтырап,
+Ту арқаңнан өтеді.
+
+Ал кіріссе ертекке,
+Басы қалт-қалт етеді:
+«Ертек-ертек, ерте екен...» –
+Аузы балп-балп етеді.
+
+«Ерте, ерте, ерте екен...
+Тыңда енді ал, шырақ!
+...Сұр мергенде болыпты
+Сүліктей бедеу бір сұр ат...»
+
+Қоя қойды Кенжетай
+Жылаған жаңа нан сұрап.
+Тыңдап отыр тентектер
+Алма беті албырап,
+
+Ауыздары аңқиып,
+Сілекейі салбырап.
+Қалғып бірақ барады
+Кенжетай тентек маужырап.</div>
           </details>
 
-          <details data-title="мен кім">
-            <summary>Мен кім?</summary>
-            <div class="poem-content">Арыстанмын, айбатыма кім шыдар?
-Жолбарыспын, маған қарсы кім тұрар?
-Көкте — бұлт, жерде — желмін гулеген,
-Жер еркесі — желдің жөнін кім сұрар?
+          <details data-title="ата бата">
+            <summary>Ата, бата</summary>
+            <div class="poem-content">Мектептен қайтты Марияш,
+Әліппесі қолында.
+Шақырады оны атасы:
+«Кел, құлыным, кел мұнда».
 
-Көкте — Күнмін, көпке нұрым шашамын,
-Көңілге алсам, қазір ғарышқа асамын.
-Шеті, түбі жоқ теңізбін қаракөк,
-Ерігемін — толқып, шалқып, тасамын.</div>
+Марияш:
+«Ата, ата!» — дегенде,
+Атасы:
+«Құлыным ата дейді ғой!»
+
+Марияш:
+«Бата, бата!» — дегенде,
+Атасы:
+«Құлыным бата дейді ғой!
+
+Бата десең, қарт атаң
+Айналсын сендей ботасын!
+Оқы, құлыным, әлім бол,
+Атаң берді батасын!»</div>
+          </details>
+
+          <details data-title="абайға атақты ақын сөзі алтын хакім абайға">
+            <summary>Атақты ақын — сөзі алтын хакім Абайға</summary>
+            <div class="poem-content">Шын хакім, сөзің асыл — баға жетпес,
+Бір сөзің мың жыл жүрсе, дәмі кетпес.
+Қарадан хакім болған сендей жанды
+Дүние қолын жайып енді күтпес.
+
+Сөзіңе құлақ салып, баға бермей,
+Қисайып, қыңырайды жұрттың иттес!
+Бұртиып, теріс қарап: «Аулақ жүр!» — деп,
+Болды ғой жақын туған бәрі кектес.
+
+Тыныш ұйықта қабіріңде, уайым жеме,
+«Қор болды қайран сөзім босқа!» — деме.
+Артында қазақтың жас балалары
+Сөзіңді көсем қылып, жүрер жөнге!
+
+Ай, жыл өтер, дүние көшін тартар,
+Өлтіріп талай жанды, жүгін артар.
+Көз ашып, жұртың ояу болған сайын,
+Хакім ата, тыныш бол, қадірің артар.
+
+Жүрген жанның артында ізі қалар,
+Етікші өлсе, балға мен бізі қалар.
+Бір бай өлсе, төрт түлік малы қалар,
+Жүйрік өлсе, артында сөзі қалар!
+
+Сұм дүние сылаң беріп көптен өтер,
+Сау қалғанның көбісі ертең бітер.
+Тоқтамас дүниенің дөңгелегі,
+Жүйріктің айтқан сөзі көпке кетер.</div>
           </details>
 
           <details data-title="туған жер">
@@ -935,7 +1316,55 @@
 Жаратылдым топырағыңнан, сен — түбім.
 Жалғаны жоқ, бәрі сенен жан-тәнім.
 Сенен басқа жерде маған қараңғы,
-Жарық болар Шолпан, Айым, сен — Күнім.</div>
+Жарық болар Шолпан, Айым, сен — Күнім.
+
+Тәтті суың дәмі аузымнан еш кетпес,
+Қалың нуың, қыр, суыңа жер жетпес.
+Кең далаңда ойын ойнап қалсамшы,
+Жазу болып адамзатқа ер жетпес!..
+
+Балақ түріп, қозы қуып, жарысып,
+Батпағында тең құрбымен алысып.
+Түнде — ақсүйек, алтыбақан, ал күндіз
+Үйретем деп асау тайға жабысып.
+
+«Адам басы — Алла добы» деген рас,
+Қалай қуса, солай кетпек сорлы бас.
+Кім біледі, мен де шетке кетермін,
+Туған жерім, сені тастап басым жас.</div>
+          </details>
+
+          <details data-title="мен кім">
+            <summary>Мен кім?</summary>
+            <div class="poem-content">Арыстанмын, айбатыма кім шыдар?
+Жолбарыспын, маған қарсы кім тұрар?
+Көкте — бұлт, жерде — желмін гулеген,
+Жер еркесі — желдің жөнін кім сұрар?
+
+Көкте — Күнмін, көпке нұрым шашамын,
+Көңілге алсам, қазір ғарышқа асамын.
+Шеті, түбі жоқ теңізбін қаракөк,
+Ерігемін — толқып, шалқып, тасамын.
+
+Жалынмын мен, келме жақын, жанарсың,
+Тұлпармын мен, шаңыма ермей қаларсың.
+Күл болсын көк, жемірілсін жер, уайым жоқ,
+Көз қырымен күліп қана қарармын.
+
+Мен өлмеймін, менікі де өлмейді,
+Надан адам өлім жоғын білмейді.
+Өзім — патша, өзім — қазы, өзім — би,
+Қандай ессіз не қылдың деп тергейді?
+
+Мейірленсем — сегіз жұмақ қолымда,
+Қаһарлансам — тамұқ даяр жолымда.
+Жоқ жақыным, Жасағандай жалғызбын!
+Мен бе иілер әлсіз адам ұлына?!
+
+Өзім — тәңірі, табынамын өзіме,
+Сөзім — құран, бағынамын сөзіме!
+Бұзушы да, түзеуші де өзіммін,
+Енді, ескілік, келдің өлер кезіңе!</div>
           </details>
 
           <details data-title="туған жерім сасықкөл">
@@ -947,11 +1376,46 @@
 
 Жанында жас балалар ойнаған көл,
 Жан-жануар суыңды ішіп, тоймаған көл.
-Көз салып жалтырыңа, мұңға батып,
-Ғашықтар жарын іздеп, ойлаған көл.</div>
+Көз салып жалтырыңа, мұңға батып
+Ғашықтар жарын іздеп, ойлаған көл.
+
+Шешініп қыз-келіншек су алған көл,
+Әр жанды мөлдіріңнен суарған көл.
+Масайрап, суға тойып төрт түлік мал
+Дөңіне ойнақ салып, қуанған көл.
+
+Сыртыңда ақ боз үйлер жарасқан көл,
+Байларың кедейлерге қарасқан көл.
+Ағайын тату-тәтті — қоныс бірге,
+Саулықты сағат сайын сұрасқан көл.
+
+Түрлі құс әуез қосып, шулаған көл,
+Шуақта балықтарың тулаған көл.
+Сапырып сары қымыз ертенді-кеш
+Басында кеңес құрып, дулаған көл.
+
+Сасық деп еркелетіп, ат қойған көл,
+От-суға иең түгіл, жат тойған көл.
+Назданып, жүйрік мініп, тарлан шүйіп,
+Көксілдер тұс-тұс жақтан ат қойған көл.
+
+Кір жуып, кіндік кесіп, сенде өскен көл,
+Құрбымен ойнап-күліп, кел дескен көл.
+Жарысып, тайға мініп, батпаққа аунап
+Күресіп күн батқанда белдескен көл.
+
+Айдын көл, ата қоныс, құт болған көл,
+Сусын боп сұрағанға, от болған көл.
+Кеше бірлік, ынтымақ түгел шақта
+Бейне бір сенің басың сүт болған көл.
+
+Білмеймін не боларың, қайран көлім,
+Жарайды тең болмаса күн мен түнің.
+Итиіп қарашекпен келіп қонса,
+Басыңнан құсың ұшып кетер сенің.</div>
           </details>
 
-          <details data-title="түркістан">
+          <details data-title="түркістан тұран">
             <summary>Түркістан</summary>
             <div class="poem-content">Түркістан — екі дүние есігі ғой,
 Түркістан — ер түріктің бесігі ғой.
@@ -961,7 +1425,92 @@
 Ертеде Түркістанды Тұран дескен,
 Тұранда ер түрігім туып-өскен.
 Тұранның тағдыры бар толқымалы,
-Басынан көп тамаша күндер кешкен.</div>
+Басынан көп тамаша күндер кешкен.
+
+Тұранның тарихы бар отты желдей,
+Заулаған қалың өрттей аспанға өрлей.
+Тұранның жері менен суы да жат,
+Теңіздей терең, ауыр ой бергендей.
+
+Тұранның егі-шексіз шөлі қандай,
+Теңіздей кемері жоқ көлі қандай!
+Тұранның дария аталған өзендері
+Тасыса, шөлді басқан селі қандай!
+
+Тұранның таулары бар аспанға асқан,
+Мәңгіге басын аппақ шаштар басқан.
+Бауырында ерке бұлақ салады ойнақ,
+Жаралып таудан аққан салқын жастан.
+
+Шөлдер бар, жел де жүрмес, сап-сары құм,
+Моладай ешбір үн жоқ мәңгі тып-тын.
+Болмақ па жан-жануар шексіз шөлде,
+Сары құмда салар ойнақ пері мен жын.
+
+Тұранның теңіз дерлік көлдері бар,
+Шалқыған егі-шетсіз Теңіз, Арал.
+Бір шетте қасиетті Ыстықкөлдің
+Бауырында дүние көрген түрік көкжал.
+
+Ертеде Оқыс, Яқсарт — Жейхун, Сейхун,
+Түріктер бұл екеуін дария дейтін.
+Киелі сол екі су жағасында
+Табасың қасиетті бабаң бейітін.
+
+Тұранның Тянь-Шаньдай тауы қалай,
+Пар келмес Тянь-Шаньға таулар талай!
+Еріксіз ер түрікті ойға аларсың
+Көкке асқан Хантәңіріге қарай-қарай.
+
+Балқашты бауырына алған Тарбағатай,
+Жоталы, жер кіндігі — Памир, Алтай.
+Қазығұрт қасиеті тау болмаса,
+Топанда Нұх кемесі тоқтар қалай?
+
+Тұранның жері де жат, елі де жат,
+Құйындай бастан кешкен күші де жат!
+Тұранды түгелімен билеп тұрған
+Ертеде ертегі хан Афрасияб.
+
+Ежелден жер емес ол қарапайым,
+Білесің, тарихты ашсаң Тұран жайын.
+Тұранға қасиетті құмар болған
+Ертеде Кей-Қысырау мен Зұлқарнайын.
+
+Тұранға жер жүзінде жер жеткен бе?
+Түрікке адамзатта ел жеткен бе?
+Кең ақыл, отты қайрат, жүйрік қиял,
+Тұранның ерлеріне ер жеткен бе?!
+
+Тумайды адамзатта Шыңғыстай ер,
+Данышпан, тұңғиық ой, болат жігер.
+Шыңғыстай арыстанның құр аты да
+Адамның жүрегіне жігер берер.
+
+Тұранда түрік ойнаған ұқсап отқа,
+Түріктен басқа от болып жан туып па?
+Көп түрік енші алысып тарасқанда,
+Қазақта қара шаңырақ қалған жоқ па?
+
+Арыстан елге Отан болған Тұран,
+Тұранда қазағым да хандық құрған.
+Қазақтың қасқа жолды Қасым ханы
+Тұранның талай жерін билеп тұрған.
+
+Бұл Тұран ежелден-ақ алаш жері,
+Тұрансыз тарқамаған алаш шері.
+Тұранның топырағында тыныштық тапқан
+Алаштың арыстаны — Абылай ері...
+
+Тұраннан Сарыарқаны бөлек деме,
+Түркістан алты алашқа болған Кебе.
+Тұранның топырағын құшып жатыр
+Кешегі ердің ері көкжал Кене.
+
+Шер батса — кім іздемес туған елін,
+Тұлпар да көксемей ме туған жерін?
+Арқаның ардагері — қалың алаш,
+Тұран да, біле білсең, сенің жерің!</div>
           </details>
 
           <details data-title="шолпы">
@@ -974,7 +1523,143 @@
 Сылдыр. Сылдыр. Сылдыр...
 Өзекті өртеді құрғыр.
 Әдейі іргеден жүреді
-Сұлу қыз санадан солғыр!</div>
+Сұлу қыз санадан солғыр!
+
+Сылдыр. Сылдыр. Сылдыр...
+Жүректі жандырды құрғыр.
+Кеудені кернеді жалын,
+Сәулем, періштем, тез кір!
+
+Сылдыр. Сылдыр. Сылдыр...
+Есімнен аудырды құрғыр.
+Лебізіңнен еріп барамын,
+Жаным-ай, жақында, қол бер!
+
+Сылдыр. Сылдыр. Сылдыр...
+Талдым, қалды сүлдер.
+Сыбырға айналды сылдыр,
+Сылдыр, сылдыр, сылдыр...</div>
+          </details>
+
+          <details data-title="еділде">
+            <summary>Еділде</summary>
+            <div class="poem-content">Бүктетіліп жатқан бел
+Сүтке тойған марқадай.
+Бұйра қою қарағай
+Белге біткен шалқалай.
+
+Су жеп қойған жұмыр тас
+Түйір-түйір малтадай.
+Арнада өзен қылықты
+Қылмаңдаған қалқадай.
+
+Тайызға біткен құба тал
+Мойындағы алқадай.
+Жер еркесі жер мынау,
+Шер қалар ма тарқамай?!
+
+Түсте толқын еліріп,
+Абыржып еді ойнақтай.
+Кешке толқын тып-тыныш,
+Қабыржыған қаймақтай.
+
+Түсте толқын тулап ед
+Ойнақтаған тайлақтай.
+Кешке толқын тынып тұр
+Қоңыр іңір бейуақтай.
+
+Түскі толқын теп-тентек,
+Бойлауық, көзсіз қайраттай.
+Кешкі толқын тұңғиық,
+Тек қоймас терең ойлатпай.
+
+Тізілген толқын — меруерт
+Бір-біріне тағылып,
+Шұбырған толқын шуменен
+Ағытқан қойдай ағылып.
+
+Күңіренген толқын долданып,
+Көпіріп жарға қағылып.
+Жағада бұйра бала тал
+Таң болып тұр аңырып.
+
+Толқынға қарап мен тұрмын
+Қоңыр оймен қамығып.
+Сарыарқам қайда? Алыста!
+Жүрмін мен мұнда нағылып?!
+
+Ерте күнде Еділдің
+Ертегі деген тоғайын,
+Дүлей тоғай ішінде
+Орманбеттің ноғайын.
+
+Арқада жатқан алты алаш
+Ол күнде болған ағайын.
+Жорығы, жолы — бәрі ортақ,
+Бірге де жеген уайым.
+
+Ойнап тұрған оқадай,
+Еділдің беті ақ ала.
+«Ақ аласы не?» — десем:
+Ылғи шаңқан шағала.
+
+Кемеміз көлбеп келеді
+Жібектей жасыл жағаға.
+Шөккен бұйра бұлттай
+Астрахань жатыр сағада.</div>
+          </details>
+
+          <details data-title="жауға түскен жанға">
+            <summary>Жауға түскен жанға</summary>
+            <div class="poem-content">Дамыл көрмей ерте-кеш,
+Жұрттың қамын көп жедiң.
+Байладың белдi, салып күш,
+Тыныштық жүзiн көрмедiң.
+
+Жағаластың жауменен,
+“Бермеймiн жұртым, жаным”, – деп.
+Алыспақ болдың тауменен,
+“Жұрт үшiн төгем қаным”, – деп.
+
+“Оян!” – дедiң жұртыңа, –
+Бас көтерiп, тiрлiк қыл!”
+Ақыл айттың ұлтыңа:
+“Таста талас, бiрлiк қыл!”
+
+Бiр шешпедiң белiңдi,
+Жұрт үшiн уайым-қайғы жеп,
+Сақтамақ болып елiңдi:
+“Қара күн алда, бекiн”, – деп.
+
+Менменсiген күштi жау
+Көздеп тұрды iсiңдi.
+Қоймады сенi есен-сау,
+Алды қолдан күшiңдi.
+
+Қараңғы үйге қамады,
+Мейiрiмсiз өңшең тасбауыр.
+Сорлыға Тәңiрi пана-ды,
+Болса да бейнет қанша ауыр.
+
+Қиялға ескi бата бер,
+Қайра өзiңдi, дәрмен не?
+Уайымсыз, ойсыз жата бер,
+Жұрт үшiн түстiң, арман не?
+
+Көзiн ашып, артыңда
+Жұртың ойлар: “Бұл қалай?
+Тайынба, қорықпа, тартынба!” –
+Деушi болар бiрталай.
+
+Қараңғы болса қанша түн,
+Жұлдыз сонша жарқырар.
+Бұлт басса да Алтын күн,
+Бiр шығар, жердi жарық қылар.
+
+Келешек күнде қағазға,
+Алтынмен жазар атыңды.
+Құшақтап сүйер, қағазда
+Көрсе жазған хатыңды.</div>
           </details>
 
           <details data-title="өнер білім қайтсе табылар">
@@ -984,10 +1669,45 @@
 Ыртың-жыртың, жоқ-барға көңіл бермей,
 Періште боп анадан қайта туса!
 
+Жақын туған, бауыр деп айналмаса,
+Қатын-сатын дегенге байланбаса,
+Тынықпай, дамыл алмай ерте де кеш,
+Ізденсе, кідірмесе, жайланбаса.
+
+Дүниенің қайғысынан зарланбаса,
+Көз қысып күлгеніне алданбаса,
+Қақ жарар қара қылды тура бөліп
+Айтылған сөз жайынан жалғанбаса.
+
+Өсектен ат-тонымен алыс қашса,
+Естісе, ұялғаннан бетін басса,
+Жамандық — аты өшкірге жақын жүрмей,
+Аяғын күндік жерден байқап басса.
+
+Өзінен басқа жанды кем көрмесе,
+Құтыртып, шабыстырып, жел бермесе,
+Табылмас аузына су тамызушы,
+Өзінің тар етігін кең көрмесе!
+
 Көзі ашық адамдарға жақын жүрсе,
 Олардың әрбір сөзін үлгі көрсе.
 Естіген сөз, көргенді бос тастамай,
-Құлақ тігіп, көз салып, жиып-терсе.</div>
+Құлақ тігіп, көз салып, жиып-терсе.
+
+Көңіл көзі ашық жанды дос деп білсе,
+Мылқау, меңіреу, наданды қас деп білсе,
+Бейнеттің мұнарланған шөл даласын
+Ұжмақта хорлар тіккен қос деп білсе.
+
+Білімсіз қатқан жансыз тас деп білсе,
+Өнер-білім — қарны ашқа ас деп білсе,
+Дүниенің теңізінде адасқанға
+Тура жол көрсететін бас деп білсе.
+
+Осы оймен тура жүрсе, бұлтармаса,
+Басқаға мойын бұрса, көз салмаса —
+Өнер-білім жер астында болса-дағы,
+Бір жетер, жалықтым деп тастамаса.</div>
           </details>
         </div>
       </div>
@@ -998,86 +1718,82 @@
         <div class="section-title">
           <h2>ЖИ әлеміндегі Мағжан</h2>
           <p>
-            Жасанды интеллект Мағжан мұрасын жаңа форматта танытуға мүмкіндік береді:
-            анимация, әуен, комикс, интерактивті тапсырма және цифрлық оқу.
+            Мағжан мұрасын анимация, әуен, комикс, интерактивті ойын және цифрлық кітапхана арқылы
+            жаңа буынға жақындатуға болады.
           </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="card feature">
-            <div class="icon">🎬</div>
-            <h3>Анимациялық бейне</h3>
-            <p>
-              Ақын поэмалары мен педагогикалық ойларын көрнекі бейнелер арқылы
-              түсіндіруге болады.
-            </p>
-          </article>
+        <div class="video-grid">
+          <div class="video-card" data-video="zRs5VOUCds4" data-title="Батыр Баян — анимациялық видео">
+            <img src="https://img.youtube.com/vi/zRs5VOUCds4/hqdefault.jpg" alt="Батыр Баян превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Батыр Баян</strong>
+              <span>Анимациялық видео</span>
+            </div>
+          </div>
 
-          <article class="card feature">
-            <div class="icon">🎵</div>
-            <h3>SUNO әуені</h3>
-            <p>
-              Өлең жолдарына заманауи әуен қосып, жас ұрпаққа жақын формат жасауға
-              мүмкіндік бар.
-            </p>
-          </article>
+          <div class="video-card" data-video="rQdUjQ4F3Pg" data-title="Педагогика — анимациялық материал">
+            <img src="https://img.youtube.com/vi/rQdUjQ4F3Pg/hqdefault.jpg" alt="Педагогика превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Педагогика</strong>
+              <span>Анимациялық материал</span>
+            </div>
+          </div>
 
-          <article class="card feature">
-            <div class="icon">🎮</div>
-            <h3>Интерактивті ойын</h3>
-            <p>
-              Викторина, асық ойыны және білім тексеру тапсырмалары арқылы
-              шығармашылықты қызықты үйренуге болады.
-            </p>
-          </article>
-        </div>
+          <div class="video-card" data-video="OqTRLj1lw4w" data-title="Бесік жыры — SUNO әуені">
+            <img src="https://img.youtube.com/vi/OqTRLj1lw4w/hqdefault.jpg" alt="Бесік жыры превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Бесік жыры</strong>
+              <span>SUNO әуені</span>
+            </div>
+          </div>
 
-        <div style="height: 24px;"></div>
+          <div class="video-card" data-video="MFWKKvUMsOc" data-title="Шолпы — қысқа әуен">
+            <img src="https://img.youtube.com/vi/MFWKKvUMsOc/hqdefault.jpg" alt="Шолпы превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Шолпы</strong>
+              <span>YouTube Shorts</span>
+            </div>
+          </div>
 
-        <div class="link-grid">
-          <a class="resource-link" href="https://www.youtube.com/watch?v=zRs5VOUCds4" target="_blank" rel="noopener">
-            <strong>«Батыр Баян»</strong>
-            <span>Анимациялық бейне</span>
-          </a>
-          <a class="resource-link" href="https://youtu.be/rQdUjQ4F3Pg?si=ncqQdfSZitf-sorg" target="_blank" rel="noopener">
-            <strong>«Педагогика»</strong>
-            <span>Анимациялық материал</span>
-          </a>
-          <a class="resource-link" href="https://www.youtube.com/watch?v=OqTRLj1lw4w" target="_blank" rel="noopener">
-            <strong>«Бесік жыры»</strong>
-            <span>SUNO әуені</span>
-          </a>
-          <a class="resource-link" href="https://www.youtube.com/shorts/MFWKKvUMsOc" target="_blank" rel="noopener">
-            <strong>«Шолпы»</strong>
-            <span>Қысқа әуен</span>
-          </a>
-          <a class="resource-link" href="https://www.youtube.com/shorts/PGF9v-XQ1l4" target="_blank" rel="noopener">
-            <strong>«Сүйемін»</strong>
-            <span>Қысқа әуен</span>
-          </a>
-          <a class="resource-link" href="https://youtu.be/_kGgX0ax-YM?si=pZqi8TxA-71WY2ua" target="_blank" rel="noopener">
-            <strong>«Мен жастарға сенемін»</strong>
-            <span>Музыкалық нұсқа</span>
-          </a>
+          <div class="video-card" data-video="PGF9v-XQ1l4" data-title="Сүйемін — қысқа әуен">
+            <img src="https://img.youtube.com/vi/PGF9v-XQ1l4/hqdefault.jpg" alt="Сүйемін превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Сүйемін</strong>
+              <span>YouTube Shorts</span>
+            </div>
+          </div>
+
+          <div class="video-card" data-video="_kGgX0ax-YM" data-title="Мен жастарға сенемін — музыкалық нұсқа">
+            <img src="https://img.youtube.com/vi/_kGgX0ax-YM/hqdefault.jpg" alt="Мен жастарға сенемін превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Мен жастарға сенемін</strong>
+              <span>Музыкалық нұсқа</span>
+            </div>
+          </div>
         </div>
 
         <div style="height: 24px;"></div>
 
         <div class="card">
           <h3>Кім білгір?</h3>
-          <p>
-            Мағжан Жұмабаев туралы білімді тексеруге арналған интерактивті тапсырмалар.
-          </p>
-          <div class="link-grid">
-            <a class="resource-link" href="https://learningapps.org/watch?v=pa1ax8iw526" target="_blank" rel="noopener">
+          <p>Мағжан Жұмабаев туралы білімді тексеруге арналған интерактивті тапсырмалар.</p>
+          <div class="resource-grid">
+            <a class="resource" href="https://learningapps.org/watch?v=pa1ax8iw526" target="_blank" rel="noopener">
               <strong>Асық ойыны</strong>
               <span>LearningApps тапсырмасы</span>
             </a>
-            <a class="resource-link" href="https://wordwall.net/ru/resource/54680967/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
-              <strong>Білім тексеру</strong>
-              <span>Wordwall тапсырмасы</span>
+            <a class="resource" href="https://wordwall.net/ru/resource/54680967/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
+              <strong>Wordwall тапсырмасы</strong>
+              <span>Білімді тексеру</span>
             </a>
-            <a class="resource-link" href="https://wordwall.net/ru/resource/62363525/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
+            <a class="resource" href="https://wordwall.net/ru/resource/62363525/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
               <strong>Викторина</strong>
               <span>Wordwall ойыны</span>
             </a>
@@ -1090,23 +1806,20 @@
       <div class="container">
         <div class="section-title">
           <h2>Сандық кітапхана</h2>
-          <p>
-            Мағжан шығармаларын электронды форматта оқу — ақын мұрасын кеңінен
-            танудың қолайлы жолы.
-          </p>
+          <p>Мағжан шығармаларын электронды форматта оқу — ақын мұрасын кеңінен танудың тиімді жолы.</p>
         </div>
 
         <div class="card">
-          <div class="link-grid">
-            <a class="resource-link" href="https://kazneb.kz/" target="_blank" rel="noopener">
+          <div class="resource-grid">
+            <a class="resource" href="https://kazneb.kz/" target="_blank" rel="noopener">
               <strong>Қазақстандық Ұлттық Электронды Кітапхана</strong>
               <span>Мағжан Жұмабаев еңбектерін іздеу</span>
             </a>
-            <a class="resource-link" href="#" onclick="alert('PDF файлын репозиторийге жүктеп, осы сілтемені өзгерту керек.'); return false;">
+            <a class="resource" href="#" onclick="alert('PDF файлын репозиторийге жүктеп, сілтемесін осы жерге қою керек.'); return false;">
               <strong>PDF жинақ</strong>
               <span>ff3518d4add4dbab2752549dcc226be6.pdf</span>
             </a>
-            <a class="resource-link" href="#murasy">
+            <a class="resource" href="#olenderi">
               <strong>Сайттағы өлеңдер</strong>
               <span>Таңдамалы шығармалар бөлімі</span>
             </a>
@@ -1119,37 +1832,33 @@
       <div class="container">
         <div class="section-title">
           <h2>Кино-live</h2>
-          <p>
-            Мағжан Жұмабаев пен Алаш тақырыбындағы деректі және көркем материалдар.
-          </p>
+          <p>Мағжан Жұмабаев пен Алаш тақырыбындағы бейнематериалдар.</p>
         </div>
 
-        <div class="media-grid">
-          <div class="video">
-            <iframe
-              src="https://www.youtube.com/embed/mEq9mY4Z4c0"
-              title="Мағжан туралы кино"
-              allowfullscreen>
-            </iframe>
+        <div class="video-grid">
+          <div class="video-card" data-video="mEq9mY4Z4c0" data-title="Мағжан туралы кино">
+            <img src="https://img.youtube.com/vi/mEq9mY4Z4c0/hqdefault.jpg" alt="Мағжан туралы кино превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>Мағжан туралы кино</strong>
+              <span>Кино-live</span>
+            </div>
+          </div>
+
+          <div class="video-card" data-video="q67XqLfb1ok" data-title="AI және Мағжан мұрасы">
+            <img src="https://img.youtube.com/vi/q67XqLfb1ok/hqdefault.jpg" alt="AI және Мағжан мұрасы превью">
+            <div class="play">▶</div>
+            <div class="video-info">
+              <strong>AI және Мағжан мұрасы</strong>
+              <span>Басты бейнематериал</span>
+            </div>
           </div>
 
           <div class="card">
             <h3>Киношежіре</h3>
-            <p>
-              <strong>1990</strong> — «Мағжан», режиссері: Қ. Умаров.
-              Жанры: деректі фильм. Өндіріс: «Қазақтелефильм».
-            </p>
-            <p>
-              <strong>1994</strong> — «Алаш туралы сөз», режиссері: Қ. Умаров.
-              Жанры: деректі фильм.
-            </p>
-            <p>
-              <strong>2009</strong> — «Алашорда», режиссері: Қ. Умаров.
-              Өндіріс: Шәкен Айманов атындағы «Қазақфильм».
-            </p>
-            <a class="btn btn-primary" href="https://youtu.be/mEq9mY4Z4c0?si=X1UA_YbSuMxru3UL" target="_blank" rel="noopener">
-              YouTube арқылы көру
-            </a>
+            <p><strong>1990</strong> — «Мағжан», режиссері: Қ. Умаров. Жанры: деректі фильм.</p>
+            <p><strong>1994</strong> — «Алаш туралы сөз», режиссері: Қ. Умаров.</p>
+            <p><strong>2009</strong> — «Алашорда», режиссері: Қ. Умаров. Өндіріс: «Қазақфильм».</p>
           </div>
         </div>
       </div>
@@ -1159,21 +1868,18 @@
       <div class="container">
         <div class="section-title">
           <h2>AI-чатбот</h2>
-          <p>
-            Бұл бөлім — сайт ішіндегі шағын таныстырылымдық чатбот. Ол Мағжан туралы
-            қысқа жауаптар береді.
-          </p>
+          <p>Бұл шағын чатбот Мағжан өмірі мен мұрасы туралы қысқаша жауап береді.</p>
         </div>
 
         <div class="chat-wrap">
           <div class="card">
             <h3>Жылдам сұрақтар</h3>
-            <p>Төмендегі сұрақтардың бірін басыңыз немесе өз сұрағыңызды жазыңыз.</p>
+            <p>Сұрақты басыңыз немесе өзіңіз жазыңыз.</p>
 
             <div class="quick-questions">
               <button data-question="Мағжан кім?">Мағжан кім?</button>
               <button data-question="Мағжанның басты тақырыптары қандай?">Мағжанның басты тақырыптары қандай?</button>
-              <button data-question="Мен жастарға сенемін өлеңі туралы айт">«Мен жастарға сенемін» өлеңі туралы айт</button>
+              <button data-question="Мен жастарға сенемін өлеңі туралы айт">«Мен жастарға сенемін» туралы айт</button>
               <button data-question="Мағжан және Алаш">Мағжан және Алаш</button>
               <button data-question="Мағжанның педагогикадағы орны">Мағжанның педагогикадағы орны</button>
             </div>
@@ -1196,6 +1902,16 @@
     </section>
   </main>
 
+  <div class="modal" id="videoModal">
+    <div class="modal-inner">
+      <div class="modal-top">
+        <div class="modal-title" id="modalTitle">Видео</div>
+        <button class="close" id="closeModal">×</button>
+      </div>
+      <div class="frame" id="videoFrame"></div>
+    </div>
+  </div>
+
   <footer>
     <div class="container">
       <div>© <span id="year"></span> AI және Мағжан мұрасы</div>
@@ -1203,7 +1919,7 @@
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="Жоғары көтерілу">↑</button>
+  <button class="to-top" id="toTop">↑</button>
 
   <script>
     const menuBtn = document.getElementById("menuBtn");
@@ -1224,7 +1940,7 @@
     const toTop = document.getElementById("toTop");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 650) {
         toTop.classList.add("show");
       } else {
         toTop.classList.remove("show");
@@ -1242,17 +1958,65 @@
       const value = poemSearch.value.toLowerCase().trim();
 
       poemItems.forEach((item) => {
-        const title = item.dataset.title;
+        const title = item.dataset.title.toLowerCase();
         item.style.display = title.includes(value) ? "block" : "none";
       });
     });
 
     document.getElementById("openAll").addEventListener("click", () => {
-      poemItems.forEach((item) => item.open = true);
+      poemItems.forEach((item) => {
+        if (item.style.display !== "none") {
+          item.open = true;
+        }
+      });
     });
 
     document.getElementById("closeAll").addEventListener("click", () => {
-      poemItems.forEach((item) => item.open = false);
+      poemItems.forEach((item) => {
+        item.open = false;
+      });
+    });
+
+    const modal = document.getElementById("videoModal");
+    const videoFrame = document.getElementById("videoFrame");
+    const modalTitle = document.getElementById("modalTitle");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".video-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        const videoId = card.dataset.video;
+        const title = card.dataset.title || "Видео";
+
+        modalTitle.textContent = title;
+        videoFrame.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+            title="${title}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        `;
+        modal.classList.add("open");
+      });
+    });
+
+    function stopVideo() {
+      videoFrame.innerHTML = "";
+      modal.classList.remove("open");
+    }
+
+    closeModal.addEventListener("click", stopVideo);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        stopVideo();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        stopVideo();
+      }
     });
 
     const messages = document.getElementById("messages");
@@ -1262,31 +2026,27 @@
     const answers = [
       {
         keys: ["кім", "магжан", "мағжан"],
-        text: "Мағжан Жұмабаев — Алаш қозғалысының қайраткері, қазақтың көрнекті ақыны, ағартушы, педагог және аудармашы."
+        text: "Мағжан Жұмабаев — Алаш қозғалысының қайраткері, қазақтың көрнекті ақыны, педагог, аудармашы және ұлттық рух жыршысы."
       },
       {
         keys: ["тақырып", "шығармашылық", "мұра"],
-        text: "Мағжан шығармашылығында туған жер, ұлт бостандығы, түркі бірлігі, махаббат, табиғат, білім, адам жаны және рухани еркіндік тақырыптары кең орын алады."
+        text: "Мағжан шығармаларында туған жер, ұлт азаттығы, түркі бірлігі, махаббат, табиғат, білім және рухани еркіндік тақырыптары кең орын алады."
       },
       {
         keys: ["жастар", "сенемін"],
-        text: "«Мен жастарға сенемін» — ақынның болашақ ұрпаққа арнаған сенім гимні. Өлеңде жігер, намыс, қайрат және елге қызмет ету идеясы айқын көрінеді."
+        text: "«Мен жастарға сенемін» — ақынның болашақ ұрпаққа деген сенімін білдіретін рухты өлең. Онда қайрат, намыс, елге қызмет ету идеясы айқын көрінеді."
       },
       {
         keys: ["алаш"],
-        text: "Мағжан Алаш қайраткерлерімен байланыста болып, ұлттық жаңғыру мен елдік идеяға қызмет етті. Оның поэзиясында азаттық рухы ерекше сезіледі."
+        text: "Мағжан Алаш қайраткерлерімен тығыз байланыста болды. Оның поэзиясында елдік, ұлттық сана және азаттық идеясы ерекше сезіледі."
       },
       {
         keys: ["педагогика", "білім", "тәрбие"],
-        text: "Мағжан «Педагогика» еңбегі арқылы қазақ тіліндегі педагогикалық ойдың дамуына үлес қосты. Ол баланың жан дүниесін, тәрбиесін және ана тілінің маңызын жоғары бағалады."
+        text: "Мағжанның «Педагогика» еңбегі қазақ тіліндегі педагогикалық ойдың дамуына үлкен үлес қосты. Ол бала тәрбиесінде ана тілінің, жан тәрбиесінің маңызын жоғары бағалады."
       },
       {
         keys: ["түркістан", "тұран"],
-        text: "«Түркістан» өлеңінде ақын түркі жұртының тарихи тамырын, Тұран кеңістігінің рухани маңызын асқақ пафоспен жырлайды."
-      },
-      {
-        keys: ["сасықкөл", "туған жер"],
-        text: "«Туған жерім — Сасықкөл» өлеңінде ақын балалық шағы өткен мекенге деген сағынышын және туған табиғатқа сүйіспеншілігін білдіреді."
+        text: "«Түркістан» өлеңінде Мағжан түркі дүниесінің тарихи тамырын, Тұран кеңістігінің рухани маңызын асқақ шабытпен жырлайды."
       }
     ];
 
@@ -1301,15 +2061,15 @@
     function getBotAnswer(question) {
       const q = question.toLowerCase();
 
-      const found = answers.find((item) =>
-        item.keys.some((key) => q.includes(key))
-      );
+      const found = answers.find((item) => {
+        return item.keys.some((key) => q.includes(key));
+      });
 
       if (found) {
         return found.text;
       }
 
-      return "Бұл сұрақ бойынша қысқаша жауап: Мағжан мұрасы — қазақ әдебиеті мен ұлттық руханиятындағы аса құнды қазына. Нақтырақ сұрасаңыз, өмірі, өлеңдері, Алаш, педагогика немесе ЖИ бөлімі туралы айтып бере аламын.";
+      return "Бұл сұрақ бойынша қысқаша жауап: Мағжан мұрасы — қазақ әдебиеті мен ұлттық руханиятындағы аса құнды қазына. Өмірі, өлеңдері, Алаш, педагогика немесе ЖИ бөлімі туралы нақты сұрақ қойсаңыз, жауап беремін.";
     }
 
     function sendQuestion(question) {
