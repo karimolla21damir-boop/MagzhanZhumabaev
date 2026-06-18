@@ -1,1 +1,1339 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI және Мағжан мұрасы</title>
+  <meta name="description" content="Мағжан Жұмабаевтың өмірі, шығармашылығы және жасанды интеллект әлеміндегі мұрасы туралы танымдық сайт." />
 
+  <style>
+    :root {
+      --bg: #f7efe3;
+      --paper: #fffaf2;
+      --text: #24180f;
+      --muted: #6f5a44;
+      --accent: #9b5c21;
+      --accent-2: #c9954b;
+      --dark: #1f1711;
+      --gold: #e3b15e;
+      --green: #2f5f4f;
+      --shadow: 0 18px 45px rgba(67, 42, 18, 0.16);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(227,177,94,0.25), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(47,95,79,0.15), transparent 30%),
+        linear-gradient(180deg, #fff7e9 0%, var(--bg) 45%, #efe1cd 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 242, 0.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(155, 92, 33, 0.14);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, var(--accent), var(--gold));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(155, 92, 33, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 15px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(155, 92, 33, 0.10);
+      color: var(--accent);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 14px;
+      padding: 10px 13px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .hero {
+      padding: 78px 0 55px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid rgba(155, 92, 33, 0.2);
+      background: rgba(255, 250, 242, 0.65);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 86px);
+      letter-spacing: -2px;
+      color: var(--dark);
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      margin: 22px 0 28px;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 19px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-weight: 700;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 14px 25px rgba(155, 92, 33, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #7c4618;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.65);
+      color: var(--accent);
+      border: 1px solid rgba(155, 92, 33, 0.22);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(155, 92, 33, 0.10);
+      transform: translateY(-2px);
+    }
+
+    .portrait-card {
+      position: relative;
+      background: linear-gradient(145deg, #fff8ed, #ead3b5);
+      border-radius: 36px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portrait-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(155, 92, 33, 0.25);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .portrait {
+      position: relative;
+      height: 390px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(31,23,17,0.15), rgba(31,23,17,0.45)),
+        url("https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: sepia(0.28);
+    }
+
+    .portrait-fallback {
+      display: none;
+    }
+
+    .quote {
+      position: relative;
+      padding: 20px 14px 4px;
+      font-size: 20px;
+      color: var(--dark);
+    }
+
+    .quote span {
+      display: block;
+      color: var(--accent);
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      background: rgba(255, 250, 242, 0.75);
+      border: 1px solid rgba(155, 92, 33, 0.14);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(67, 42, 18, 0.07);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--accent);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      color: var(--dark);
+    }
+
+    .section-title p {
+      max-width: 620px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .card {
+      background: rgba(255, 250, 242, 0.86);
+      border: 1px solid rgba(155, 92, 33, 0.13);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(67, 42, 18, 0.09);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 14px;
+      padding: 16px;
+      background: rgba(255,255,255,0.45);
+      border-radius: 18px;
+      border: 1px solid rgba(155, 92, 33, 0.10);
+    }
+
+    .year {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .bio-text p {
+      margin-top: 0;
+      color: #3c2c1f;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .feature p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .feature .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(155, 92, 33, 0.12);
+      color: var(--accent);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .poem-tools {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 230px;
+      padding: 13px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(155, 92, 33, 0.22);
+      background: rgba(255,255,255,0.72);
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .poems {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid rgba(155, 92, 33, 0.16);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(67, 42, 18, 0.07);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      float: right;
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .poem-content {
+      padding: 0 20px 22px;
+      color: #352719;
+      white-space: pre-line;
+      font-size: 18px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .video {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      box-shadow: var(--shadow);
+    }
+
+    .video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .resource-link {
+      display: block;
+      text-decoration: none;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(155, 92, 33, 0.14);
+      transition: 0.25s ease;
+    }
+
+    .resource-link:hover {
+      transform: translateY(-3px);
+      background: rgba(227, 177, 94, 0.18);
+    }
+
+    .resource-link strong {
+      display: block;
+      color: var(--dark);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .resource-link span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .chat-wrap {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+    }
+
+    .quick-questions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .quick-questions button {
+      text-align: left;
+      border: 1px solid rgba(155, 92, 33, 0.17);
+      background: rgba(255,255,255,0.55);
+      border-radius: 16px;
+      padding: 13px 14px;
+      font-family: inherit;
+      cursor: pointer;
+      color: var(--dark);
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .quick-questions button:hover {
+      background: rgba(155, 92, 33, 0.10);
+    }
+
+    .chatbox {
+      height: 430px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .messages {
+      flex: 1;
+      overflow: auto;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .msg {
+      max-width: 82%;
+      padding: 12px 14px;
+      border-radius: 18px;
+      font-size: 16px;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background: rgba(47, 95, 79, 0.10);
+      border: 1px solid rgba(47, 95, 79, 0.18);
+    }
+
+    .user {
+      align-self: flex-end;
+      background: rgba(155, 92, 33, 0.13);
+      border: 1px solid rgba(155, 92, 33, 0.18);
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 8px;
+      padding: 14px;
+      border-top: 1px solid rgba(155, 92, 33, 0.14);
+      background: rgba(255,255,255,0.45);
+    }
+
+    .chat-form input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(155, 92, 33, 0.22);
+      padding: 12px 15px;
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+
+    footer {
+      padding: 34px 0;
+      background: var(--dark);
+      color: rgba(255,255,255,0.78);
+      margin-top: 45px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      display: none;
+      font-size: 20px;
+    }
+
+    .to-top.show {
+      display: block;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .intro-grid,
+      .chat-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .link-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-title {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 76px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(255, 250, 242, 0.98);
+        border: 1px solid rgba(155, 92, 33, 0.16);
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 14px;
+      }
+
+      .portrait-card {
+        min-height: auto;
+      }
+
+      .portrait {
+        height: 320px;
+      }
+
+      .feature-grid,
+      .media-grid,
+      .link-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Басты бет">
+        <span class="brand-mark">М</span>
+        <span>AI және Мағжан мұрасы</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Мәзір">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#omiri">Өмірі</a>
+        <a href="#murasy">Мұрасы</a>
+        <a href="#ai">ЖИ әлемі</a>
+        <a href="#kitaphana">Сандық кітапхана</a>
+        <a href="#kino">Кино-live</a>
+        <a href="#chatbot">AI-чатбот</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">✦ Ұлттық рух пен жаңа технология тоғысы</div>
+          <h1>Мағжан мұрасы — ұлттық рухтың мәңгілік үні</h1>
+          <p>
+            Бұл сайт Мағжан Жұмабаевтың өмірі, шығармашылығы, поэзиясы және
+            жасанды интеллект арқылы жаңаша танылуы туралы таныстырылымдық кеңістік.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#murasy">Шығармаларды оқу</a>
+            <a class="btn btn-secondary" href="https://youtube.com/watch?v=q67XqLfb1ok&feature=shared" target="_blank" rel="noopener">
+              Бейнематериал көру
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>1893</strong>
+              <span>Ақын дүниеге келді</span>
+            </div>
+            <div class="stat">
+              <strong>1912</strong>
+              <span>«Шолпан» жинағы шықты</span>
+            </div>
+            <div class="stat">
+              <strong>1938</strong>
+              <span>Қуғын-сүргін құрбаны болды</span>
+            </div>
+            <div class="stat">
+              <strong>1989</strong>
+              <span>Мұрасы қайта оралды</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="portrait-card">
+          <div class="portrait" role="img" aria-label="Мағжан Жұмабаев суреті"></div>
+          <div class="quote">
+            «Мен жастарға сенемін!»
+            <span>Мағжан Жұмабаев</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="omiri">
+      <div class="container">
+        <div class="section-title">
+          <h2>Мағжан Жұмабаев өмірі</h2>
+          <p>
+            Алаш қозғалысының қайраткері, ұлт ақыны, ағартушы әрі қазақ әдебиетінің
+            жарық жұлдызы.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="card timeline">
+            <div class="timeline-item">
+              <div class="year">1893</div>
+              <div>Солтүстік Қазақстан өңірінде, Сасықкөл маңында дүниеге келді.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1905–1910</div>
+              <div>Қызылжардағы медреседе білім алып, Шығыс әдебиетімен танысты.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1910–1913</div>
+              <div>Уфа қаласындағы «Ғалия» медресесінде оқыды.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1912</div>
+              <div>Қазанда «Шолпан» атты тұңғыш өлеңдер жинағы жарық көрді.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1917</div>
+              <div>Қоғамдық-саяси өмірге белсене араласып, Алаш ісіне қызмет етті.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1923–1927</div>
+              <div>Мәскеудегі Жоғары әдебиет-көркемөнер институтында білім алды.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1929–1936</div>
+              <div>«Алқа» ұйымы бойынша айыпталып, түрме мен айдауға ұшырады.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">1938</div>
+              <div>Қайта тұтқындалып, 19 наурызда ату жазасына кесілді.</div>
+            </div>
+          </div>
+
+          <div class="card bio-text">
+            <h3>Қысқаша өмірбаян</h3>
+            <p>
+              Мағжан Бекенұлы Жұмабаев — қазақ әдебиетіндегі сыршылдық пен
+              романтикалық қуатты жаңа биікке көтерген ақын. Ол бала күнінен білімге
+              құштар болып, Қызылжар, Уфа, Омбы, Мәскеу қалаларында білім алды.
+            </p>
+            <p>
+              Ақын Абай дәстүрін жалғастырып, Шығыс пен Батыс мәдениетін терең
+              таныды. Оның поэзиясында туған жер, түркі бірлігі, азаттық, махаббат,
+              адам жаны, өнер-білім және ұлттық рух тақырыптары кең орын алды.
+            </p>
+            <p>
+              Мағжан Жұмабаев ағартушылық салада да еңбек етіп, «Педагогика»,
+              «Бастауыш мектепте ана тілін оқыту жөні» секілді еңбектер жазды.
+              Кеңестік қуғын-сүргін жылдарында жазықсыз жапа шегіп, кейін ақталды.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="murasy">
+      <div class="container">
+        <div class="section-title">
+          <h2>Мағжан мұрасы</h2>
+          <p>
+            Ақын поэзиясы — ұлттық рух, терең сезім, асқақ ой және көркем тілдің
+            айрықша үлгісі.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card feature">
+            <div class="icon">☀</div>
+            <h3>Ұлттық рух</h3>
+            <p>
+              Мағжан шығармаларында елдік, еркіндік, туған жерге сүйіспеншілік
+              ерекше шабытпен жырланады.
+            </p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">✒</div>
+            <h3>Сыршыл лирика</h3>
+            <p>
+              Ақын адамның нәзік сезімін, махаббат пен сағынышты терең поэтикалық
+              үнмен жеткізді.
+            </p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">📚</div>
+            <h3>Ағартушылық</h3>
+            <p>
+              Ол білім мен тәрбие мәселесіне ерекше мән беріп, педагогикалық
+              еңбектер қалдырды.
+            </p>
+          </article>
+        </div>
+
+        <div style="height: 28px;"></div>
+
+        <div class="poem-tools">
+          <input class="search" id="poemSearch" type="search" placeholder="Өлең атауын іздеу..." />
+          <button class="btn btn-secondary" id="openAll">Барлығын ашу</button>
+          <button class="btn btn-secondary" id="closeAll">Барлығын жабу</button>
+        </div>
+
+        <div class="poems" id="poems">
+          <details data-title="қазақ тілі">
+            <summary>Қазақ тілі</summary>
+            <div class="poem-content">Күш кеміді, айбынды ту құлады,
+Кеше батыр – бүгін қорқақ, бұғады.
+Ерікке ұмтылған ұшқыр жаны кісенде,
+Қан суынған, жүрек солғын соғады.
+
+Қыран құсты қос қанаты қырқылды,
+Күндей күшті күркіреген ел тынды.
+Асқар Алтай — алтын ана есте жоқ,
+Батыр, хандар — асқан жандар ұмытылды!
+
+Ерлік, елдік, бірлік, қайрат, бақ, ардың, —
+Жауыз тағдыр жойды бәрін не бардың...
+Алтын Күннен бағасыз бір белгі боп,
+Нұрлы жұлдыз, бабам тілі, сен қалдың!</div>
+          </details>
+
+          <details data-title="мен жастарға сенемін">
+            <summary>Мен жастарға сенемін</summary>
+            <div class="poem-content">Арыстандай айбатты,
+Жолбарыстай қайратты –
+Қырандай күшті қанатты.
+Мен жастарға сенемін!
+
+Көздерінде от ойнар,
+Сөздерінде жалын бар,
+Жаннан қымбат оларға ар,
+Мен жастарға сенемін!</div>
+          </details>
+
+          <details data-title="мен кім">
+            <summary>Мен кім?</summary>
+            <div class="poem-content">Арыстанмын, айбатыма кім шыдар?
+Жолбарыспын, маған қарсы кім тұрар?
+Көкте — бұлт, жерде — желмін гулеген,
+Жер еркесі — желдің жөнін кім сұрар?
+
+Көкте — Күнмін, көпке нұрым шашамын,
+Көңілге алсам, қазір ғарышқа асамын.
+Шеті, түбі жоқ теңізбін қаракөк,
+Ерігемін — толқып, шалқып, тасамын.</div>
+          </details>
+
+          <details data-title="туған жер">
+            <summary>Туған жер</summary>
+            <div class="poem-content">Бұл жарыққа аяқ басып туған жер,
+Кіндік кесіп, кірім сенде жуған жер.
+Жастық — алтын, қайтып келмес күнімде
+Ойын ойнап, шыбын-шіркей қуған жер.
+
+Жаратылдым топырағыңнан, сен — түбім.
+Жалғаны жоқ, бәрі сенен жан-тәнім.
+Сенен басқа жерде маған қараңғы,
+Жарық болар Шолпан, Айым, сен — Күнім.</div>
+          </details>
+
+          <details data-title="туған жерім сасықкөл">
+            <summary>Туған жерім — Сасықкөл</summary>
+            <div class="poem-content">Алыстан мұнарланып шалқыған көл,
+Бетіңде күннің нұры балқыған көл.
+Жарысып саф күмістей ақ көбігің,
+Мап-майда мөлдірінде қалқыған көл.
+
+Жанында жас балалар ойнаған көл,
+Жан-жануар суыңды ішіп, тоймаған көл.
+Көз салып жалтырыңа, мұңға батып,
+Ғашықтар жарын іздеп, ойлаған көл.</div>
+          </details>
+
+          <details data-title="түркістан">
+            <summary>Түркістан</summary>
+            <div class="poem-content">Түркістан — екі дүние есігі ғой,
+Түркістан — ер түріктің бесігі ғой.
+Тамаша Түркістандай жерде туған
+Түріктің Тәңірі берген несібесі ғой.
+
+Ертеде Түркістанды Тұран дескен,
+Тұранда ер түрігім туып-өскен.
+Тұранның тағдыры бар толқымалы,
+Басынан көп тамаша күндер кешкен.</div>
+          </details>
+
+          <details data-title="шолпы">
+            <summary>Шолпы</summary>
+            <div class="poem-content">Сылдыр. Сылдыр. Сылдыр...
+Қанымды қайнатты құрғыр.
+Шық-шық жүрекке тиеді,
+Күлпара талқан боп сынғыр!
+
+Сылдыр. Сылдыр. Сылдыр...
+Өзекті өртеді құрғыр.
+Әдейі іргеден жүреді
+Сұлу қыз санадан солғыр!</div>
+          </details>
+
+          <details data-title="өнер білім қайтсе табылар">
+            <summary>Өнер-білім қайтсе табылар</summary>
+            <div class="poem-content">Ер жігіт өнер табар ерте қуса,
+Ерініп шаршамастай, белін буса,
+Ыртың-жыртың, жоқ-барға көңіл бермей,
+Періште боп анадан қайта туса!
+
+Көзі ашық адамдарға жақын жүрсе,
+Олардың әрбір сөзін үлгі көрсе.
+Естіген сөз, көргенді бос тастамай,
+Құлақ тігіп, көз салып, жиып-терсе.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai">
+      <div class="container">
+        <div class="section-title">
+          <h2>ЖИ әлеміндегі Мағжан</h2>
+          <p>
+            Жасанды интеллект Мағжан мұрасын жаңа форматта танытуға мүмкіндік береді:
+            анимация, әуен, комикс, интерактивті тапсырма және цифрлық оқу.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card feature">
+            <div class="icon">🎬</div>
+            <h3>Анимациялық бейне</h3>
+            <p>
+              Ақын поэмалары мен педагогикалық ойларын көрнекі бейнелер арқылы
+              түсіндіруге болады.
+            </p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">🎵</div>
+            <h3>SUNO әуені</h3>
+            <p>
+              Өлең жолдарына заманауи әуен қосып, жас ұрпаққа жақын формат жасауға
+              мүмкіндік бар.
+            </p>
+          </article>
+
+          <article class="card feature">
+            <div class="icon">🎮</div>
+            <h3>Интерактивті ойын</h3>
+            <p>
+              Викторина, асық ойыны және білім тексеру тапсырмалары арқылы
+              шығармашылықты қызықты үйренуге болады.
+            </p>
+          </article>
+        </div>
+
+        <div style="height: 24px;"></div>
+
+        <div class="link-grid">
+          <a class="resource-link" href="https://www.youtube.com/watch?v=zRs5VOUCds4" target="_blank" rel="noopener">
+            <strong>«Батыр Баян»</strong>
+            <span>Анимациялық бейне</span>
+          </a>
+          <a class="resource-link" href="https://youtu.be/rQdUjQ4F3Pg?si=ncqQdfSZitf-sorg" target="_blank" rel="noopener">
+            <strong>«Педагогика»</strong>
+            <span>Анимациялық материал</span>
+          </a>
+          <a class="resource-link" href="https://www.youtube.com/watch?v=OqTRLj1lw4w" target="_blank" rel="noopener">
+            <strong>«Бесік жыры»</strong>
+            <span>SUNO әуені</span>
+          </a>
+          <a class="resource-link" href="https://www.youtube.com/shorts/MFWKKvUMsOc" target="_blank" rel="noopener">
+            <strong>«Шолпы»</strong>
+            <span>Қысқа әуен</span>
+          </a>
+          <a class="resource-link" href="https://www.youtube.com/shorts/PGF9v-XQ1l4" target="_blank" rel="noopener">
+            <strong>«Сүйемін»</strong>
+            <span>Қысқа әуен</span>
+          </a>
+          <a class="resource-link" href="https://youtu.be/_kGgX0ax-YM?si=pZqi8TxA-71WY2ua" target="_blank" rel="noopener">
+            <strong>«Мен жастарға сенемін»</strong>
+            <span>Музыкалық нұсқа</span>
+          </a>
+        </div>
+
+        <div style="height: 24px;"></div>
+
+        <div class="card">
+          <h3>Кім білгір?</h3>
+          <p>
+            Мағжан Жұмабаев туралы білімді тексеруге арналған интерактивті тапсырмалар.
+          </p>
+          <div class="link-grid">
+            <a class="resource-link" href="https://learningapps.org/watch?v=pa1ax8iw526" target="_blank" rel="noopener">
+              <strong>Асық ойыны</strong>
+              <span>LearningApps тапсырмасы</span>
+            </a>
+            <a class="resource-link" href="https://wordwall.net/ru/resource/54680967/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
+              <strong>Білім тексеру</strong>
+              <span>Wordwall тапсырмасы</span>
+            </a>
+            <a class="resource-link" href="https://wordwall.net/ru/resource/62363525/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener">
+              <strong>Викторина</strong>
+              <span>Wordwall ойыны</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kitaphana">
+      <div class="container">
+        <div class="section-title">
+          <h2>Сандық кітапхана</h2>
+          <p>
+            Мағжан шығармаларын электронды форматта оқу — ақын мұрасын кеңінен
+            танудың қолайлы жолы.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="link-grid">
+            <a class="resource-link" href="https://kazneb.kz/" target="_blank" rel="noopener">
+              <strong>Қазақстандық Ұлттық Электронды Кітапхана</strong>
+              <span>Мағжан Жұмабаев еңбектерін іздеу</span>
+            </a>
+            <a class="resource-link" href="#" onclick="alert('PDF файлын репозиторийге жүктеп, осы сілтемені өзгерту керек.'); return false;">
+              <strong>PDF жинақ</strong>
+              <span>ff3518d4add4dbab2752549dcc226be6.pdf</span>
+            </a>
+            <a class="resource-link" href="#murasy">
+              <strong>Сайттағы өлеңдер</strong>
+              <span>Таңдамалы шығармалар бөлімі</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kino">
+      <div class="container">
+        <div class="section-title">
+          <h2>Кино-live</h2>
+          <p>
+            Мағжан Жұмабаев пен Алаш тақырыбындағы деректі және көркем материалдар.
+          </p>
+        </div>
+
+        <div class="media-grid">
+          <div class="video">
+            <iframe
+              src="https://www.youtube.com/embed/mEq9mY4Z4c0"
+              title="Мағжан туралы кино"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="card">
+            <h3>Киношежіре</h3>
+            <p>
+              <strong>1990</strong> — «Мағжан», режиссері: Қ. Умаров.
+              Жанры: деректі фильм. Өндіріс: «Қазақтелефильм».
+            </p>
+            <p>
+              <strong>1994</strong> — «Алаш туралы сөз», режиссері: Қ. Умаров.
+              Жанры: деректі фильм.
+            </p>
+            <p>
+              <strong>2009</strong> — «Алашорда», режиссері: Қ. Умаров.
+              Өндіріс: Шәкен Айманов атындағы «Қазақфильм».
+            </p>
+            <a class="btn btn-primary" href="https://youtu.be/mEq9mY4Z4c0?si=X1UA_YbSuMxru3UL" target="_blank" rel="noopener">
+              YouTube арқылы көру
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chatbot">
+      <div class="container">
+        <div class="section-title">
+          <h2>AI-чатбот</h2>
+          <p>
+            Бұл бөлім — сайт ішіндегі шағын таныстырылымдық чатбот. Ол Мағжан туралы
+            қысқа жауаптар береді.
+          </p>
+        </div>
+
+        <div class="chat-wrap">
+          <div class="card">
+            <h3>Жылдам сұрақтар</h3>
+            <p>Төмендегі сұрақтардың бірін басыңыз немесе өз сұрағыңызды жазыңыз.</p>
+
+            <div class="quick-questions">
+              <button data-question="Мағжан кім?">Мағжан кім?</button>
+              <button data-question="Мағжанның басты тақырыптары қандай?">Мағжанның басты тақырыптары қандай?</button>
+              <button data-question="Мен жастарға сенемін өлеңі туралы айт">«Мен жастарға сенемін» өлеңі туралы айт</button>
+              <button data-question="Мағжан және Алаш">Мағжан және Алаш</button>
+              <button data-question="Мағжанның педагогикадағы орны">Мағжанның педагогикадағы орны</button>
+            </div>
+          </div>
+
+          <div class="card chatbox">
+            <div class="messages" id="messages">
+              <div class="msg bot">
+                Сәлеметсіз бе! Мен Мағжан мұрасы туралы қысқаша ақпарат беретін көмекшімін.
+              </div>
+            </div>
+
+            <form class="chat-form" id="chatForm">
+              <input id="chatInput" type="text" placeholder="Сұрағыңызды жазыңыз..." autocomplete="off" />
+              <button class="btn btn-primary" type="submit">Жіберу</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> AI және Мағжан мұрасы</div>
+      <div>Ұлттық мұраны цифрлық кеңістікте таныту жобасы</div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Жоғары көтерілу">↑</button>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toTop = document.getElementById("toTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        toTop.classList.add("show");
+      } else {
+        toTop.classList.remove("show");
+      }
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const poemSearch = document.getElementById("poemSearch");
+    const poemItems = Array.from(document.querySelectorAll("#poems details"));
+
+    poemSearch.addEventListener("input", () => {
+      const value = poemSearch.value.toLowerCase().trim();
+
+      poemItems.forEach((item) => {
+        const title = item.dataset.title;
+        item.style.display = title.includes(value) ? "block" : "none";
+      });
+    });
+
+    document.getElementById("openAll").addEventListener("click", () => {
+      poemItems.forEach((item) => item.open = true);
+    });
+
+    document.getElementById("closeAll").addEventListener("click", () => {
+      poemItems.forEach((item) => item.open = false);
+    });
+
+    const messages = document.getElementById("messages");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+
+    const answers = [
+      {
+        keys: ["кім", "магжан", "мағжан"],
+        text: "Мағжан Жұмабаев — Алаш қозғалысының қайраткері, қазақтың көрнекті ақыны, ағартушы, педагог және аудармашы."
+      },
+      {
+        keys: ["тақырып", "шығармашылық", "мұра"],
+        text: "Мағжан шығармашылығында туған жер, ұлт бостандығы, түркі бірлігі, махаббат, табиғат, білім, адам жаны және рухани еркіндік тақырыптары кең орын алады."
+      },
+      {
+        keys: ["жастар", "сенемін"],
+        text: "«Мен жастарға сенемін» — ақынның болашақ ұрпаққа арнаған сенім гимні. Өлеңде жігер, намыс, қайрат және елге қызмет ету идеясы айқын көрінеді."
+      },
+      {
+        keys: ["алаш"],
+        text: "Мағжан Алаш қайраткерлерімен байланыста болып, ұлттық жаңғыру мен елдік идеяға қызмет етті. Оның поэзиясында азаттық рухы ерекше сезіледі."
+      },
+      {
+        keys: ["педагогика", "білім", "тәрбие"],
+        text: "Мағжан «Педагогика» еңбегі арқылы қазақ тіліндегі педагогикалық ойдың дамуына үлес қосты. Ол баланың жан дүниесін, тәрбиесін және ана тілінің маңызын жоғары бағалады."
+      },
+      {
+        keys: ["түркістан", "тұран"],
+        text: "«Түркістан» өлеңінде ақын түркі жұртының тарихи тамырын, Тұран кеңістігінің рухани маңызын асқақ пафоспен жырлайды."
+      },
+      {
+        keys: ["сасықкөл", "туған жер"],
+        text: "«Туған жерім — Сасықкөл» өлеңінде ақын балалық шағы өткен мекенге деген сағынышын және туған табиғатқа сүйіспеншілігін білдіреді."
+      }
+    ];
+
+    function addMessage(text, type) {
+      const div = document.createElement("div");
+      div.className = `msg ${type}`;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function getBotAnswer(question) {
+      const q = question.toLowerCase();
+
+      const found = answers.find((item) =>
+        item.keys.some((key) => q.includes(key))
+      );
+
+      if (found) {
+        return found.text;
+      }
+
+      return "Бұл сұрақ бойынша қысқаша жауап: Мағжан мұрасы — қазақ әдебиеті мен ұлттық руханиятындағы аса құнды қазына. Нақтырақ сұрасаңыз, өмірі, өлеңдері, Алаш, педагогика немесе ЖИ бөлімі туралы айтып бере аламын.";
+    }
+
+    function sendQuestion(question) {
+      if (!question.trim()) return;
+
+      addMessage(question, "user");
+
+      setTimeout(() => {
+        addMessage(getBotAnswer(question), "bot");
+      }, 450);
+    }
+
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const question = chatInput.value;
+      chatInput.value = "";
+      sendQuestion(question);
+    });
+
+    document.querySelectorAll(".quick-questions button").forEach((button) => {
+      button.addEventListener("click", () => {
+        sendQuestion(button.dataset.question);
+      });
+    });
+  </script>
+</body>
+</html>
