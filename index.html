@@ -2095,5 +2095,80 @@
       });
     });
   </script>
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const localImages = {
+      main: "images/magzhan-main.jpg",
+      historical: "images/magzhan-historical.jpg",
+      young: "images/magzhan-young.jpg",
+      stamp: "images/magzhan-stamp.jpg",
+      monument: "images/magzhan-monument.jpg",
+      museum: "images/magzhan-museum.jpg"
+    };
+
+    const portraitMain = document.querySelector(".portrait-main");
+
+    if (portraitMain) {
+      portraitMain.style.backgroundImage = `
+        linear-gradient(180deg, rgba(25,16,10,.04), rgba(25,16,10,.42)),
+        url("${localImages.main}")
+      `;
+    }
+
+    const gallery = document.querySelector("#galereya .gallery-grid");
+
+    if (gallery) {
+      gallery.innerHTML = `
+        <div class="photo-card">
+          <img src="${localImages.main}" alt="Мағжан Жұмабаев портреті">
+          <div class="photo-label">
+            <strong>Мағжан Жұмабаев</strong><br>
+            Қазақ әдебиетінің жарық жұлдызы
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="${localImages.historical}" alt="Мағжан Жұмабаев тарихи суреті">
+          <div class="photo-label">
+            <strong>Тарихи сурет</strong><br>
+            Ақынның архивтік бейнесі
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="${localImages.young}" alt="Мағжан Жұмабаев жас кезі">
+          <div class="photo-label">
+            <strong>Жас Мағжан</strong><br>
+            Ақынның жастық шағына қатысты сурет
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="${localImages.stamp}" alt="Мағжан Жұмабаев пошта маркасы">
+          <div class="photo-label">
+            <strong>Пошта маркасы</strong><br>
+            Мағжан құрметіне шығарылған белгі
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="${localImages.monument}" alt="Мағжан Жұмабаев ескерткіші">
+          <div class="photo-label">
+            <strong>Ескерткіш</strong><br>
+            Ақын рухына қойылған ескерткіш
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="${localImages.museum}" alt="Мағжан Жұмабаев мұражайы">
+          <div class="photo-label">
+            <strong>Мемориалдық мұражай</strong><br>
+            Ақын мұрасын сақтайтын орын
+          </div>
+        </div>
+      `;
+    }
+  });
+</script>
 </body>
 </html>
