@@ -2952,5 +2952,101 @@
     }, 150);
   });
 </script>
+  <style>
+  .asyk-btn,
+  .asyk-disabled {
+    background: linear-gradient(135deg, #8b5a2b, #d69b4c) !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    box-shadow: 0 12px 24px rgba(139, 90, 43, 0.25) !important;
+  }
+
+  .asyk-btn:hover,
+  .asyk-disabled:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(139, 90, 43, 0.34) !important;
+  }
+</style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const ASYK_GAME_URL = "https://azaiiir.github.io/Idaiyatova/";
+
+    function activateAsykButton(button) {
+      button.removeAttribute("aria-disabled");
+      button.removeAttribute("disabled");
+      button.title = "Асық ойынын ашу";
+
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+
+      newButton.addEventListener("click", () => {
+        window.open(ASYK_GAME_URL, "_blank", "noopener,noreferrer");
+      });
+    }
+
+    const asykButtons = Array.from(document.querySelectorAll("button, a")).filter((element) => {
+      return element.textContent.toLowerCase().includes("асық");
+    });
+
+    asykButtons.forEach(activateAsykButton);
+  });
+</script>
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const PEDAGOGIKA_PDF_URL = "https://dev-s.balatili.kz/uploads/books/e08fa2ccab93ed12c56250cee0f46c3d/%D0%9F%D0%B5%D0%B4%D0%B0%D0%B3%D0%BE%D0%B3%D0%B8%D0%BA%D0%B0.pdf";
+
+    const allLinksAndButtons = Array.from(document.querySelectorAll("a, button"));
+
+    const digitalLibrarySection = Array.from(document.querySelectorAll("section, div, article")).find((block) => {
+      const text = block.textContent.toLowerCase();
+      return (
+        text.includes("сандық кітапхана") ||
+        text.includes("сандык кітапхана") ||
+        text.includes("сандық кытапхана") ||
+        text.includes("сандык кытапхана")
+      );
+    });
+
+    if (digitalLibrarySection) {
+      const pdfLink = Array.from(digitalLibrarySection.querySelectorAll("a")).find((link) => {
+        const text = link.textContent.toLowerCase();
+        const href = (link.getAttribute("href") || "").toLowerCase();
+
+        return (
+          text.includes("pdf") ||
+          text.includes("жүктеу") ||
+          text.includes("ашу") ||
+          text.includes("кітап") ||
+          href.includes(".pdf")
+        );
+      });
+
+      if (pdfLink) {
+        pdfLink.href = PEDAGOGIKA_PDF_URL;
+        pdfLink.target = "_blank";
+        pdfLink.rel = "noopener noreferrer";
+      }
+    }
+
+    allLinksAndButtons.forEach((element) => {
+      const text = element.textContent.toLowerCase();
+      const href = element.getAttribute("href") || "";
+
+      if (
+        text.includes("pdf") ||
+        text.includes("педагогика") ||
+        href.toLowerCase().includes(".pdf")
+      ) {
+        if (element.tagName.toLowerCase() === "a") {
+          element.href = PEDAGOGIKA_PDF_URL;
+          element.target = "_blank";
+          element.rel = "noopener noreferrer";
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
