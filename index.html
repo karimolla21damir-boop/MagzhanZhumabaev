@@ -2737,5 +2737,220 @@
     }
   });
 </script>
+  <style>
+  .separated-buttons-card {
+    display: none !important;
+  }
+
+  .interactive-extra-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .interactive-extra-btn {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 850;
+    font-family: inherit;
+    font-size: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  .interactive-extra-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .interactive-extra-btn.asyk-btn {
+    background: #e7d3b5;
+    color: #76512f;
+    opacity: 0.85;
+    cursor: not-allowed;
+    box-shadow: 0 10px 20px rgba(118, 81, 47, 0.14);
+  }
+
+  .interactive-extra-btn.learningapps-btn {
+    background: linear-gradient(135deg, #2f6fed, #40b4ff);
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(47, 111, 237, 0.24);
+  }
+
+  .interactive-extra-btn.learningapps-btn:hover {
+    box-shadow: 0 16px 30px rgba(47, 111, 237, 0.32);
+  }
+
+  .old-combined-action-hidden {
+    display: none !important;
+  }
+</style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      let learningAppsSource = null;
+      let learningAppsHref = "";
+
+      const allButtonsAndLinks = Array.from(document.querySelectorAll("a, button"));
+
+      allButtonsAndLinks.forEach((element) => {
+        const text = element.textContent.toLowerCase().trim();
+
+        if (
+          text.includes("learningapps") ||
+          text.includes("learning apps") ||
+          text.includes("лернинг") ||
+          text.includes("learning")
+        ) {
+          if (!element.classList.contains("learningapps-btn")) {
+            learningAppsSource = element;
+
+            if (element.tagName.toLowerCase() === "a" && element.href) {
+              learningAppsHref = element.href;
+            }
+          }
+        }
+
+        if (
+          text.includes("асық") &&
+          (
+            text.includes("learningapps") ||
+            text.includes("learning apps") ||
+            text.includes("лернинг") ||
+            text.includes("learning")
+          )
+        ) {
+          element.classList.add("old-combined-action-hidden");
+        }
+      });
+
+      const oldBottomButtonsCard = document.querySelector(".separated-buttons-card");
+
+      if (oldBottomButtonsCard) {
+        oldBottomButtonsCard.style.display = "none";
+      }
+
+      const currentElements = Array.from(document.querySelectorAll("a, button"));
+
+      const wordwallButton = currentElements.find((element) => {
+        return element.textContent.toLowerCase().includes("wordwall");
+      });
+
+      const quizButton = currentElements.find((element) => {
+        const text = element.textContent.toLowerCase();
+        return (
+          text.includes("викторина") ||
+          text.includes("quiz") ||
+          text.includes("квиз") ||
+          text.includes("тест")
+        );
+      });
+
+      function findBestContainer(firstElement, secondElement) {
+        if (!firstElement && !secondElement) {
+          return null;
+        }
+
+        const startElement = firstElement || secondElement;
+        let parent = startElement.parentElement;
+
+        while (parent && parent !== document.body) {
+          const buttonsInside = parent.querySelectorAll("a, button");
+
+          if (buttonsInside.length >= 2) {
+            if (!secondElement || parent.contains(secondElement)) {
+              return parent;
+            }
+          }
+
+          parent = parent.parentElement;
+        }
+
+        return startElement.parentElement;
+      }
+
+      const interactiveContainer = findBestContainer(wordwallButton, quizButton);
+
+      if (!interactiveContainer) {
+        console.warn("Интерактивті блок табылмады: Wordwall немесе Викторина батырмасы жоқ.");
+        return;
+      }
+
+      const alreadyAdded = interactiveContainer.querySelector(".interactive-extra-buttons");
+
+      if (alreadyAdded) {
+        return;
+      }
+
+      const extraButtons = document.createElement("div");
+      extraButtons.className = "interactive-extra-buttons";
+
+      extraButtons.innerHTML = `
+        <button class="interactive-extra-btn asyk-btn" type="button" aria-disabled="true" title="Бұл батырма әзірге қосылмаған">
+          Асық ойыны
+        </button>
+
+        <button class="interactive-extra-btn learningapps-btn" type="button">
+          LearningApps
+        </button>
+      `;
+
+      if (quizButton && quizButton.parentElement === interactiveContainer) {
+        quizButton.insertAdjacentElement("afterend", extraButtons);
+      } else if (wordwallButton && wordwallButton.parentElement === interactiveContainer) {
+        wordwallButton.insertAdjacentElement("afterend", extraButtons);
+      } else {
+        interactiveContainer.appendChild(extraButtons);
+      }
+
+      const asykButton = extraButtons.querySelector(".asyk-btn");
+      const learningAppsButton = extraButtons.querySelector(".learningapps-btn");
+
+      asykButton.addEventListener("click", () => {
+        alert("Асық ойыны әзірге дайын емес. Кейін қосылады.");
+      });
+
+      learningAppsButton.addEventListener("click", () => {
+        if (typeof window.openLearningApps === "function") {
+          window.openLearningApps();
+          return;
+        }
+
+        if (learningAppsHref) {
+          window.open(learningAppsHref, "_blank", "noopener,noreferrer");
+          return;
+        }
+
+        if (learningAppsSource && learningAppsSource !== learningAppsButton) {
+          learningAppsSource.click();
+          return;
+        }
+
+        const learningSection =
+          document.querySelector("#learningapps") ||
+          document.querySelector("#learningApps") ||
+          document.querySelector(".learningapps") ||
+          document.querySelector(".learning-apps");
+
+        if (learningSection) {
+          learningSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+          return;
+        }
+
+        alert("LearningApps сілтемесі табылмады. Ескі батырмадағы сілтеме сақталса, ол автоматты түрде ашылады.");
+      });
+    }, 150);
+  });
+</script>
 </body>
 </html>
