@@ -2099,5 +2099,665 @@
       });
     });
   </script>
+  <style>
+  .author-shabyt-section {
+    padding: 70px 20px;
+    background:
+      radial-gradient(circle at top left, rgba(183, 123, 53, 0.18), transparent 35%),
+      linear-gradient(135deg, #fff8ec, #f6ead9);
+    color: #2d1d12;
+  }
+
+  .author-shabyt-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .author-card,
+  .shabyt-card {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(105, 68, 35, 0.16);
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(66, 38, 15, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .author-card {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .author-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .author-photo {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 12px 30px rgba(61, 38, 18, 0.25);
+    background: #ead7bd;
+  }
+
+  .author-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(128, 76, 31, 0.12);
+    color: #7b481f;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .author-name {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 42px);
+    line-height: 1.05;
+    color: #2b1a0e;
+  }
+
+  .author-desc {
+    margin: 18px 0 0;
+    color: #5b4635;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .instagram-link {
+    margin-top: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+    padding: 13px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 12px 25px rgba(131, 58, 180, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .instagram-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(131, 58, 180, 0.34);
+  }
+
+  .shabyt-card {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shabyt-card::after {
+    content: "Шабыт";
+    position: absolute;
+    right: -10px;
+    bottom: -25px;
+    font-size: 90px;
+    font-weight: 900;
+    color: rgba(108, 66, 28, 0.07);
+    pointer-events: none;
+  }
+
+  .section-label {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(146, 87, 35, 0.12);
+    color: #83511f;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .shabyt-title {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #2d1d12;
+    line-height: 1;
+  }
+
+  .shabyt-subtitle {
+    margin: 0;
+    color: #5c4635;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 760px;
+  }
+
+  .shabyt-features {
+    margin: 22px 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+
+  .shabyt-features li {
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: rgba(255, 248, 236, 0.9);
+    color: #4c3525;
+    border: 1px solid rgba(123, 72, 31, 0.12);
+  }
+
+  .shabyt-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .shabyt-btn {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 850;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+  }
+
+  .shabyt-btn.primary {
+    background: #4a2b14;
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(74, 43, 20, 0.22);
+  }
+
+  .shabyt-btn.secondary {
+    background: #fff;
+    color: #4a2b14;
+    border: 1px solid rgba(74, 43, 20, 0.2);
+  }
+
+  .shabyt-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 850px) {
+    .author-shabyt-container {
+      grid-template-columns: 1fr;
+    }
+
+    .author-profile {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .author-photo {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    /*
+      Маңызды:
+      Папка құрылымы GitHub-та осылай болуы керек:
+
+      index.html
+      images/
+        magzhan-main.jpg
+        magzhan-historical.jpg
+        magzhan-young.jpg
+        magzhan-stamp.jpg
+        magzhan-monument.jpg
+        magzhan-museum.jpg
+        author-ulzhan.jpg
+      docs/
+        shabyt.pdf
+
+      Егер файл атауы басқаша болса, төмендегі атауларды нақты файл атына өзгерту керек.
+    */
+
+    const ASYK_GAME_URL = "https://azaiiir.github.io/Idaiyatova/";
+    const PEDAGOGIKA_PDF_URL = "https://dev-s.balatili.kz/uploads/books/e08fa2ccab93ed12c56250cee0f46c3d/%D0%9F%D0%B5%D0%B4%D0%B0%D0%B3%D0%BE%D0%B3%D0%B8%D0%BA%D0%B0.pdf";
+    const INSTAGRAM_URL = "https://www.instagram.com/idayatovaaae?igsh=djViOTJueGo2MXo4";
+    const SHABYT_PDF = "docs/shabyt.pdf";
+
+    const localImages = {
+      main: "images/magzhan-main.jpg",
+      historical: "images/magzhan-historical.jpg",
+      young: "images/magzhan-young.jpg",
+      stamp: "images/magzhan-stamp.jpg",
+      monument: "images/magzhan-monument.jpg",
+      museum: "images/magzhan-museum.jpg",
+      author: "images/author-ulzhan.jpg"
+    };
+
+    const fallbackImages = {
+      main: "https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg",
+      historical: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Magzhan_Zhumabayev.jpg/800px-Magzhan_Zhumabayev.jpg",
+      young: "https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg",
+      stamp: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Stamp_of_Kazakhstan_1993_031.jpg/800px-Stamp_of_Kazakhstan_1993_031.jpg",
+      monument: "https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg",
+      museum: "https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg",
+      author: "https://upload.wikimedia.org/wikipedia/commons/6/61/Magzhan_Zhumabayev.jpg"
+    };
+
+    function setImageWithFallback(img, localSrc, fallbackSrc) {
+      img.src = localSrc;
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = fallbackSrc;
+      };
+    }
+
+    function setPortraitBackground() {
+      const portraitMain = document.querySelector(".portrait-main");
+
+      if (!portraitMain) return;
+
+      const testImage = new Image();
+
+      testImage.onload = () => {
+        portraitMain.style.backgroundImage = `
+          linear-gradient(180deg, rgba(25,16,10,.04), rgba(25,16,10,.42)),
+          url("${localImages.main}")
+        `;
+      };
+
+      testImage.onerror = () => {
+        portraitMain.style.backgroundImage = `
+          linear-gradient(180deg, rgba(25,16,10,.04), rgba(25,16,10,.42)),
+          url("${fallbackImages.main}")
+        `;
+      };
+
+      testImage.src = localImages.main;
+    }
+
+    function restoreGallery() {
+      const gallery = document.querySelector("#galereya .gallery-grid");
+
+      if (!gallery) return;
+
+      gallery.innerHTML = `
+        <div class="photo-card">
+          <img data-local="${localImages.main}" data-fallback="${fallbackImages.main}" alt="Мағжан Жұмабаев портреті">
+          <div class="photo-label">
+            <strong>Мағжан Жұмабаев</strong><br>
+            Қазақ әдебиетінің жарық жұлдызы
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img data-local="${localImages.historical}" data-fallback="${fallbackImages.historical}" alt="Мағжан Жұмабаев тарихи суреті">
+          <div class="photo-label">
+            <strong>Тарихи сурет</strong><br>
+            Ақынның архивтік бейнесі
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img data-local="${localImages.young}" data-fallback="${fallbackImages.young}" alt="Мағжан Жұмабаев жас кезі">
+          <div class="photo-label">
+            <strong>Жас Мағжан</strong><br>
+            Ақынның жастық шағына қатысты сурет
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img data-local="${localImages.stamp}" data-fallback="${fallbackImages.stamp}" alt="Мағжан Жұмабаев пошта маркасы">
+          <div class="photo-label">
+            <strong>Пошта маркасы</strong><br>
+            Мағжан құрметіне шығарылған белгі
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img data-local="${localImages.monument}" data-fallback="${fallbackImages.monument}" alt="Мағжан Жұмабаев ескерткіші">
+          <div class="photo-label">
+            <strong>Ескерткіш</strong><br>
+            Ақын рухына қойылған ескерткіш
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img data-local="${localImages.museum}" data-fallback="${fallbackImages.museum}" alt="Мағжан Жұмабаев мұражайы">
+          <div class="photo-label">
+            <strong>Мемориалдық мұражай</strong><br>
+            Ақын мұрасын сақтайтын орын
+          </div>
+        </div>
+      `;
+
+      gallery.querySelectorAll("img").forEach((img) => {
+        setImageWithFallback(img, img.dataset.local, img.dataset.fallback);
+      });
+    }
+
+    function restoreAuthorAndShabyt() {
+      if (document.querySelector("#author-shabyt")) return;
+
+      const section = document.createElement("section");
+      section.className = "author-shabyt-section";
+      section.id = "author-shabyt";
+
+      section.innerHTML = `
+        <div class="author-shabyt-container">
+          <article class="author-card">
+            <div>
+              <div class="author-profile">
+                <img class="author-photo" src="${localImages.author}" alt="Сайт авторы Идаятова Ұлжан">
+                <div>
+                  <span class="author-kicker">Сайт авторы</span>
+                  <h2 class="author-name">Идаятова Ұлжан</h2>
+                </div>
+              </div>
+
+              <p class="author-desc">
+                Бұл сайт Мағжан Жұмабаевтың өмірі мен шығармашылығын заманауи форматта таныстыруға арналған.
+                Автор: <strong>Идаятова Ұлжан</strong>.
+              </p>
+            </div>
+
+            <a class="instagram-link" href="${INSTAGRAM_URL}" target="_blank" rel="noopener noreferrer">
+              Instagram парақшасы
+            </a>
+          </article>
+
+          <article class="shabyt-card" id="shabyt-journal">
+            <span class="section-label">Әдеби-комикс журналы</span>
+            <h2 class="shabyt-title">“Шабыт”</h2>
+            <p class="shabyt-subtitle">
+              “Шабыт” — Мағжан Жұмабаев шығармаларына арналған әдеби-комикс журналы.
+              Журналда ақынның өлеңдері, әдеби мұрасы және көркем ой әлемі оқушыға түсінікті,
+              қызықты форматта ұсынылады.
+            </p>
+
+            <ul class="shabyt-features">
+              <li>Мағжан Жұмабаевтың өлеңдері мен шығармашылық әлемі</li>
+              <li>Әдебиет пен визуалды комикс стилінің үйлесімі</li>
+              <li>Оқушыларға арналған танымдық әрі шығармашылық материал</li>
+            </ul>
+
+            <div class="shabyt-actions">
+              <a class="shabyt-btn primary" href="${SHABYT_PDF}" target="_blank" rel="noopener noreferrer">
+                Журналды ашу
+              </a>
+              <a class="shabyt-btn secondary" href="${SHABYT_PDF}" download>
+                PDF жүктеу
+              </a>
+            </div>
+          </article>
+        </div>
+      `;
+
+      const footer = document.querySelector("footer");
+
+      if (footer) {
+        footer.before(section);
+      } else {
+        document.body.appendChild(section);
+      }
+
+      const authorImg = section.querySelector(".author-photo");
+      setImageWithFallback(authorImg, localImages.author, fallbackImages.author);
+    }
+
+    function fixInteractiveLinks() {
+      const aiSection = document.querySelector("#ai");
+
+      if (aiSection) {
+        const cardTitles = Array.from(aiSection.querySelectorAll(".card h3"));
+        const targetTitle = cardTitles.find((title) => title.textContent.toLowerCase().includes("кім білгір"));
+
+        if (targetTitle) {
+          const card = targetTitle.closest(".card");
+
+          if (card) {
+            card.innerHTML = `
+              <h3>Кім білгір?</h3>
+              <p>Мағжан Жұмабаев туралы білімді тексеруге арналған интерактивті тапсырмалар.</p>
+
+              <div class="resource-grid">
+                <a class="resource" href="${ASYK_GAME_URL}" target="_blank" rel="noopener noreferrer">
+                  <strong>Асық ойыны</strong>
+                  <span>Интерактивті ойын</span>
+                </a>
+
+                <a class="resource" href="https://wordwall.net/ru/resource/54680967/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener noreferrer">
+                  <strong>Wordwall тапсырмасы</strong>
+                  <span>Білімді тексеру</span>
+                </a>
+
+                <a class="resource" href="https://wordwall.net/ru/resource/62363525/%D0%BC%D0%B0%D2%93%D0%B6%D0%B0%D0%BD-%D0%B6%D2%B1%D0%BC%D0%B0%D0%B1%D0%B0%D0%B5%D0%B2?ref=community" target="_blank" rel="noopener noreferrer">
+                  <strong>Викторина</strong>
+                  <span>Wordwall ойыны</span>
+                </a>
+
+                <a class="resource" href="https://learningapps.org/watch?v=pa1ax8iw526" target="_blank" rel="noopener noreferrer">
+                  <strong>LearningApps</strong>
+                  <span>LearningApps тапсырмасы</span>
+                </a>
+              </div>
+            `;
+          }
+        }
+      }
+    }
+
+    function fixDigitalLibrary() {
+      const kitaphanaSection = document.querySelector("#kitaphana");
+
+      if (!kitaphanaSection) return;
+
+      const card = kitaphanaSection.querySelector(".card");
+
+      if (!card) return;
+
+      card.innerHTML = `
+        <div class="resource-grid">
+          <a class="resource" href="https://kazneb.kz/" target="_blank" rel="noopener noreferrer">
+            <strong>Қазақстандық Ұлттық Электронды Кітапхана</strong>
+            <span>Мағжан Жұмабаев еңбектерін іздеу</span>
+          </a>
+
+          <a class="resource" href="${PEDAGOGIKA_PDF_URL}" target="_blank" rel="noopener noreferrer">
+            <strong>Педагогика</strong>
+            <span>PDF кітабын ашу</span>
+          </a>
+
+          <a class="resource" href="#olenderi">
+            <strong>Сайттағы өлеңдер</strong>
+            <span>Таңдамалы шығармалар бөлімі</span>
+          </a>
+        </div>
+      `;
+    }
+
+    function restoreExtendedChatbot() {
+      const extendedAnswers = [
+        {
+          keys: ["кім", "мағжан кім", "магжан кім", "жұмабаев кім"],
+          text: "Мағжан Жұмабаев — қазақтың ұлы ақыны, Алаш қайраткері, педагог, аудармашы және ұлттық рух жыршысы. Ол 1893 жылы Солтүстік Қазақстан өңірінде дүниеге келіп, қазақ поэзиясына жаңа көркемдік бағыт әкелді."
+        },
+        {
+          keys: ["қашан туған", "туған жылы", "қай жылы туған", "дүниеге келді"],
+          text: "Мағжан Жұмабаев 1893 жылы 25 маусымда қазіргі Солтүстік Қазақстан облысы аумағында дүниеге келген."
+        },
+        {
+          keys: ["қай жерде туған", "туған жер", "сасықкөл"],
+          text: "Мағжан Жұмабаев Солтүстік Қазақстан өңірінде, Сасықкөл маңында дүниеге келген. Ақын туған жерін ерекше сүйіп, оны бірнеше өлеңінде тебірене жырлаған."
+        },
+        {
+          keys: ["қайтыс", "қашан өлді", "қаза", "1938"],
+          text: "Мағжан Жұмабаев 1938 жылы сталиндік қуғын-сүргін кезінде жазықсыз атылды. Кейін ақын есімі ақталып, мұрасы халқына қайта оралды."
+        },
+        {
+          keys: ["алаш", "алашорда"],
+          text: "Мағжан Жұмабаев Алаш қозғалысының идеяларымен тығыз байланысты болды. Оның шығармаларында елдік, тәуелсіздік, ұлттық намыс және халықтың болашағына сенім тақырыптары айқын көрінеді."
+        },
+        {
+          keys: ["тақырып", "шығармашылық", "мұра", "не туралы жазды"],
+          text: "Мағжан шығармашылығының негізгі тақырыптары: туған жер, ұлт азаттығы, махаббат, табиғат, түркі бірлігі, жастарға сенім, білім, рухани еркіндік және адам жанының терең сезімдері."
+        },
+        {
+          keys: ["мен жастарға сенемін", "жастарға сенемін", "жастар"],
+          text: "«Мен жастарға сенемін» — Мағжанның ең рухты өлеңдерінің бірі. Бұл шығармада ақын қазақ жастарына үлкен үміт артады. Жастарды елдің болашағы, намыстың, қайраттың, білімнің иесі ретінде көрсетеді."
+        },
+        {
+          keys: ["түркістан", "тұран", "түрік"],
+          text: "«Түркістан» өлеңінде Мағжан Түркістанды түркі халықтарының қасиетті бесігі ретінде суреттейді. Өлеңде тарихи сана, түркілік рух, кең дала мен көне өркениетке деген мақтаныш сезімі басым."
+        },
+        {
+          keys: ["мен кім", "арыстанмын", "айбат"],
+          text: "«Мен кім?» өлеңі — ақынның асқақ рухын, ішкі қуатын, еркін мінезін көрсететін шығарма. Онда лирикалық кейіпкер өзін арыстанға, жолбарысқа, күнге, жалынға теңейді."
+        },
+        {
+          keys: ["қазақ тілі", "тіл туралы", "ана тілі"],
+          text: "«Қазақ тілі» өлеңінде Мағжан ана тілін халықтың жаны, рухы, тарихтан қалған ең қымбат мұрасы ретінде жырлайды. Ақын тілдің ұлтты біріктіретін күш екенін көрсетеді."
+        },
+        {
+          keys: ["туған жер", "отан"],
+          text: "Мағжан туған жер тақырыбын ерекше нәзіктікпен жырлаған. Оның өлеңдерінде туған жер — адамның тамыры, балалық шағы, рухани тірегі ретінде көрінеді."
+        },
+        {
+          keys: ["шолпан", "алғашқы жинақ"],
+          text: "Мағжанның алғашқы өлеңдер жинағы «Шолпан» деп аталады. Ол 1912 жылы Қазан қаласында жарық көрді. Бұл жинақ ақынның әдебиеттегі алғашқы үлкен қадамы болды."
+        },
+        {
+          keys: ["педагогика", "тәрбие", "білім", "мұғалім"],
+          text: "Мағжан Жұмабаев тек ақын ғана емес, педагог та болды. Оның «Педагогика» еңбегі қазақ тіліндегі маңызды ғылыми-педагогикалық еңбектердің бірі саналады. Онда бала тәрбиесі, жан тәрбиесі, ана тілі және ұлттық тәрбие мәселелері қарастырылған."
+        },
+        {
+          keys: ["махаббат", "сүйемін", "лирика"],
+          text: "Мағжан лирикасында махаббат тақырыбы ерекше орын алады. Ақын махаббатты тек сезім ретінде емес, адам жанының сұлулығы, сағыныш, нәзіктік және рухани тазалық ретінде бейнелейді."
+        },
+        {
+          keys: ["табиғат", "көл", "жел", "ай", "күн"],
+          text: "Мағжан табиғатты тірі бейнедей суреттейді. Оның өлеңдерінде жел, күн, ай, көл, дала адамның көңіл күйімен астасып жатады. Табиғат арқылы ақын ішкі сезімін жеткізеді."
+        },
+        {
+          keys: ["абай", "абайға"],
+          text: "Мағжан Абайды қазақ әдебиетінің ұлы ұстазы, хакім ақын ретінде жоғары бағалаған. «Атақты ақын — сөзі алтын хакім Абайға» өлеңінде Абайдың сөзінің мәңгілік құнын жырлайды."
+        },
+        {
+          keys: ["батыр баян", "баян"],
+          text: "«Батыр Баян» — Мағжанның тарихи-эпикалық поэмасы. Шығармада ерлік, елдік, махаббат, намыс және трагедиялық тағдыр тақырыптары көтеріледі."
+        },
+        {
+          keys: ["қуғын", "түрме", "сот", "атылды", "репрессия"],
+          text: "Мағжан кеңестік қуғын-сүргіннің құрбаны болды. 1929 жылы тұтқындалып, кейін босатылғанымен, 1937 жылы қайта ұсталып, 1938 жылы атылды. Бұл — қазақ зиялыларына жасалған ауыр тарихи әділетсіздіктің бірі."
+        },
+        {
+          keys: ["ақталды", "мұрасы оралды"],
+          text: "Мағжан Жұмабаевтың есімі кейін ақталды. Оның шығармалары халқына қайта оралып, мектептерде, жоғары оқу орындарында оқытыла бастады."
+        },
+        {
+          keys: ["неге маңызды", "маңызы", "құндылығы"],
+          text: "Мағжан мұрасы маңызды, себебі ол қазақ халқының рухын, тілін, тарихын, еркіндікке ұмтылысын көркем сөзбен жеткізді. Оның шығармалары бүгінгі ұрпақты елін, тілін, жерін сүюге тәрбиелейді."
+        },
+        {
+          keys: ["стилі", "ерекшелігі", "символизм", "романтизм"],
+          text: "Мағжан поэзиясының ерекшелігі — терең сезім, асқақ романтизм, символдық бейнелер, әуезді тіл және ұлттық рухтың күшті берілуі. Ол қазақ өлеңіне жаңа көркемдік бояу қосты."
+        },
+        {
+          keys: ["аударма", "аудармашы"],
+          text: "Мағжан аудармамен де айналысқан. Ол орыс және әлем әдебиетінен аудармалар жасап, қазақ оқырманына өзге әдеби дәстүрлерді жақындатуға үлес қосты."
+        },
+        {
+          keys: ["сұрақ", "не сұрай аламын", "көмек"],
+          text: "Сіз менен Мағжанның өмірі, туған жері, өлеңдері, Алаш қозғалысы, «Мен жастарға сенемін», «Түркістан», «Педагогика», қуғын-сүргін жылдары және мұрасының маңызы туралы сұрай аласыз."
+        }
+      ];
+
+      const quickQuestions = document.querySelector(".quick-questions");
+
+      if (quickQuestions) {
+        quickQuestions.innerHTML = `
+          <button data-question="Мағжан кім?">Мағжан кім?</button>
+          <button data-question="Мағжан қашан және қай жерде туған?">Қашан және қай жерде туған?</button>
+          <button data-question="Мағжанның туған жері туралы айт">Туған жері туралы</button>
+          <button data-question="Мағжанның басты тақырыптары қандай?">Басты тақырыптары</button>
+          <button data-question="Мен жастарға сенемін өлеңі туралы айт">«Мен жастарға сенемін»</button>
+          <button data-question="Түркістан өлеңі туралы айт">«Түркістан» өлеңі</button>
+          <button data-question="Мен кім өлеңі туралы айт">«Мен кім?» өлеңі</button>
+          <button data-question="Қазақ тілі өлеңі туралы айт">«Қазақ тілі» өлеңі</button>
+          <button data-question="Мағжан және Алаш">Мағжан және Алаш</button>
+          <button data-question="Мағжанның педагогикадағы орны">Педагогикадағы орны</button>
+          <button data-question="Батыр Баян туралы айт">«Батыр Баян»</button>
+          <button data-question="Мағжан не үшін қуғындалды?">Қуғын-сүргін тағдыры</button>
+          <button data-question="Мағжанның әдеби стилі қандай?">Әдеби стилі</button>
+          <button data-question="Мағжан мұрасы неге маңызды?">Мұрасының маңызы</button>
+        `;
+
+        quickQuestions.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("click", () => {
+            if (typeof sendQuestion === "function") {
+              sendQuestion(button.dataset.question);
+            }
+          });
+        });
+      }
+
+      window.getBotAnswer = function(question) {
+        const q = question.toLowerCase().trim();
+
+        const found = extendedAnswers.find((item) => {
+          return item.keys.some((key) => q.includes(key.toLowerCase()));
+        });
+
+        if (found) {
+          return found.text;
+        }
+
+        if (q.includes("өлең") || q.includes("шығарма")) {
+          return "Мағжанның өлеңдері терең сезімге, ұлттық рухқа және көркем бейнеге бай. Нақты өлеңнің атын жазсаңыз, мысалы «Түркістан», «Мен кім?», «Қазақ тілі», «Мен жастарға сенемін», сол туралы кеңірек айтып беремін.";
+        }
+
+        if (q.includes("өмір") || q.includes("биография") || q.includes("өмірбаян")) {
+          return "Мағжан Жұмабаев 1893 жылы дүниеге келген. Ол медреседе, кейін Уфадағы «Ғалия» медресесінде оқыды. Ақын, педагог, Алаш қайраткері ретінде танылды. 1938 жылы қуғын-сүргін құрбаны болды.";
+        }
+
+        if (q.includes("ai") || q.includes("жи") || q.includes("жасанды интеллект")) {
+          return "Жасанды интеллект Мағжан мұрасын жаңа форматта танытуға көмектеседі: өлеңдерін талдау, аудио оқу, анимация жасау, интерактивті викторина құрастыру және сандық кітапхана дайындау сияқты мүмкіндіктер береді.";
+        }
+
+        return "Бұл сұрақ бойынша нақты жауап табу үшін сұрағыңызды сәл анықтап жазыңыз. Мысалы: «Мағжан кім?», «Түркістан өлеңі туралы айт», «Мағжан және Алаш», «Педагогика еңбегі туралы», «Мағжан неге маңызды?» деп сұрай аласыз.";
+      };
+
+      const messages = document.getElementById("messages");
+
+      if (messages && !messages.dataset.extendedInfoAdded) {
+        const info = document.createElement("div");
+        info.className = "msg bot";
+        info.textContent = "Чатбот жаңартылды: енді мен Мағжанның өмірі, өлеңдері, Алаш, педагогика, қуғын-сүргін және әдеби стилі туралы көбірек жауап бере аламын.";
+        messages.appendChild(info);
+        messages.dataset.extendedInfoAdded = "true";
+      }
+    }
+
+    setPortraitBackground();
+    restoreGallery();
+    restoreAuthorAndShabyt();
+    fixInteractiveLinks();
+    fixDigitalLibrary();
+    restoreExtendedChatbot();
+  });
+</script>
 </body>
 </html>
